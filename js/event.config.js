@@ -65,7 +65,7 @@ window.THRHIVE = {
       { name: "Hive Keeper", amount: 100, line: "Keeps the whole thing running." },
     ],
 
-    // Pollinators: one-time gifts.
+    // One-time gifts.
     once: [
       { name: "Bloom", amount: 25, line: "Small gift. Real growth." },
       { name: "Comb Builder", amount: 100, line: "Builds what the Hive stands on." },

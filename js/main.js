@@ -535,7 +535,7 @@
     const groups = {
       monthly: { label: "The Swarm · monthly members", unit: "/mo", long: "/month", verb: "monthly", join: "You're joining the Swarm as" },
       yearly: { label: "The Swarm · yearly members", unit: "/yr", long: "/year", verb: "yearly", join: "You're joining the Swarm as" },
-      once: { label: "Pollinators · one-time gifts", unit: "", long: " one time", verb: "once", join: "You're giving as a" },
+      once: { label: "One-time gifts", unit: "", long: " one time", verb: "once", join: "You're giving as a" },
     };
     const tiersFor = (freq) => (freq === "once" ? G.once : G.swarm.map((t) => ({ ...t, amount: freq === "yearly" ? t.amount * 12 : t.amount })));
     const mathFor = (freq, amt) => {
@@ -567,7 +567,7 @@
     const renderSummary = () => {
       const g = groups[state.freq];
       let you;
-      if (state.freq === "once") you = `Pollinator gift · <b>${esc(state.custom ? "Your own amount" : state.name)}</b>`;
+      if (state.freq === "once") you = `One-time gift · <b>${esc(state.custom ? "Your own amount" : state.name)}</b>`;
       else you = state.custom ? "You're joining <b>the Swarm</b>" : `You're joining the Swarm as <b>${esc(state.name)}</b>`;
       $("#giver-you").innerHTML = state.amount > 0 ? you : "Pick an amount";
       $("#giver-amount").innerHTML = state.amount > 0 ? `${money(state.amount)}<small>${g.long}</small>` : "$0";
@@ -724,7 +724,7 @@
       "", "Send me the giving link when it's live.",
     ],
     done: (r) => ({
-      title: r.frequency === "once" ? "Thank you, Pollinator." : "Welcome to the Swarm.",
+      title: r.frequency === "once" ? "Thank you for showing up." : "Welcome to the Swarm.",
       body: `Your ${money(r.amount)}${r.frequency === "once" ? "" : r.frequency === "monthly" ? "/month" : "/year"} pledge is locked in. We'll email your secure giving link the moment it's live.`,
       toast: "Pledge locked in 🐝",
     }),
