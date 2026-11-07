@@ -32,7 +32,7 @@ Everything that will change lives in **`js/event.config.js`**.
 ## Giving: the Swarm, one-time gifts and the Apiary
 
 - **The Swarm** is the monthly or yearly giving community: 5 for Thrive ($5), Worker Bee ($25), Honey Maker ($50), Hive Keeper ($100).
-- **One-time gifts:** Bloom ($25), Comb Builder ($100), Fund a Week ($333), Fund a Month ($1,333).
+- **One-time gifts:** First Flight ($25), Comb Builder ($100), Fund a Week ($333), Fund a Month ($1,333).
 - **The Apiary** is for businesses and major donors: Program Sponsor ($4,000), Year-Round Sponsor ($16,000), Throwdown Partner.
 
 The site doesn't take payments itself. Point `giving.links` at checkout pages on a
