@@ -163,7 +163,7 @@
     };
     tick();
   } else {
-    // No date yet: scramble behind a "classified" stamp
+    // No date yet: scramble behind a "coming soon" stamp
     cdWrap.dataset.state = "scramble";
     cdLabel.textContent = "Date dropping soon";
     const scramble = () => Object.values(units).forEach((u) => {
@@ -174,9 +174,8 @@
   }
 
   /* ------------------------------------------------------------------------
-     Throwdown intel cards (rendered from config)
+     Throwdown game plan cards (rendered from config)
      ------------------------------------------------------------------------ */
-  const lockSvg = '<svg class="card__lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></svg>';
   const grid = $("#intel-grid");
   if (grid && Array.isArray(C.intel)) {
     grid.innerHTML = C.intel.map((c, i) => {
@@ -189,11 +188,10 @@
           ${c.detail ? `<p class="card__detail">${esc(c.detail)}</p>` : ""}
         </article>`;
       }
-      return `<article class="card card--locked reveal" ${d} aria-label="${esc(c.label)}: not announced yet">
-        <p class="card__label"><span>${esc(c.label)}</span>${lockSvg}</p>
-        <div class="card__value" aria-hidden="true"><span class="redact"></span><span class="redact"></span></div>
-        <p class="card__detail">${esc(c.teaser || "Dropping soon.")}</p>
-        <span class="stamp" aria-hidden="true">Classified</span>
+      return `<article class="card card--soon reveal" ${d}>
+        <p class="card__label"><span>${esc(c.label)}</span><span class="card__pulse" aria-hidden="true"></span></p>
+        <h4 class="card__value">Coming soon</h4>
+        <p class="card__detail">${esc(c.teaser || "Announced soon.")}</p>
       </article>`;
     }).join("");
   }

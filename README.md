@@ -20,7 +20,7 @@ Everything that will change lives in **`js/event.config.js`**.
 | --- | --- |
 | `countdownTo`, `timeTBA`, `countdownLabel` | The hero countdown. It currently counts to the start of Dec 12. Set the real start time once it's announced. |
 | `calendar` | Events in the **Save Dec 11–12** calendar file. Dates alone give all-day events. Add `start`/`end` times once they're known. |
-| `intel` | The Throwdown intel cards. A card with `value: null` shows as locked **CLASSIFIED**. Give it a `value` (and an optional `detail`) to unlock it. |
+| `intel` | The Throwdown game plan cards. A card with `value: null` shows as **Coming soon**. Give it a `value` (and an optional `detail`) to fill it in. |
 | `registerUrl` | Shows a **Register now** button above the early-list form. |
 | `giving.links` | Checkout pages for `monthly`, `yearly` and `once`. Until a link is set, that button collects a pledge (name + email) instead. |
 | `giving.amountParam` | If your checkout page reads the amount from its URL (e.g. `?amount=25`), put the parameter name here. |
@@ -69,8 +69,8 @@ is absolute.
 ```
 index.html            page markup
 css/styles.css        all styles (brand colors are CSS variables at the top)
-js/event.config.js    ← dates, intel, giving tiers, links: edit this one
-js/main.js            interactions: honeycomb hero, countdown, intel cards,
+js/event.config.js    ← dates, game plan, giving tiers, links: edit this one
+js/main.js            interactions: honeycomb hero, countdown, game plan cards,
                       giving widget, forms, program tracker, calendar invite,
                       share button, scroll gallery, quotes, hype meter
 supabase/schema.sql   optional database for sign-ups, pledges and partners

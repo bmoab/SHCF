@@ -3,8 +3,8 @@
    --------------------------------------------------------------------------
    This is the ONLY file you need to touch to update the site.
 
-   - Any intel card with `value: null` shows as a locked
-     "CLASSIFIED / DROPPING SOON" card. Fill it in and it unlocks.
+   - Any game-plan card with `value: null` shows as "Coming soon".
+     Fill it in and the card lights up.
    - Paste donation links into `giving.links` and the Give buttons go
      straight to checkout. Until then they collect pledges.
    - Update `programs[].raised` as money comes in and the honeycomb
@@ -27,16 +27,16 @@ window.THRHIVE = {
     { title: "Thrive Throwdown @ Salty Hive CrossFit 🐝", date: "2026-12-12" },
   ],
 
-  /* --- Throwdown intel cards ---------------------------------------------- */
-  // value: big text, detail: small text. value: null = locked card + teaser.
+  /* --- Throwdown game plan cards ---------------------------------------------- */
+  // value: big text, detail: small text. value: null = "Coming soon" + teaser.
   intel: [
     { label: "When", value: "Dec 11–12", detail: "Liftoff Friday · Throwdown Saturday" },
     { label: "Where", value: "Salty Hive CrossFit", detail: "4050 S Howick St · Salt Lake City" },
     { label: "The Cause", value: "Funding ThrHIVE", detail: "Free CrossFit for local recovery programs" },
-    { label: "Start Time", value: null, teaser: "Times dropping soon." },
-    { label: "The Format", value: null, teaser: "What you'll be doing. Classified." },
-    { label: "Divisions", value: null, teaser: "Who's in. Stay tuned." },
-    { label: "Entry", value: null, teaser: "Price drops with the details." },
+    { label: "Start Time", value: null, teaser: "Times announced soon." },
+    { label: "The Format", value: null, teaser: "Workouts revealed soon." },
+    { label: "Divisions", value: null, teaser: "Divisions announced soon." },
+    { label: "Entry", value: null, teaser: "Entry details coming soon." },
     { label: "Registration", value: null, teaser: "Get on the early list below." },
   ],
 
