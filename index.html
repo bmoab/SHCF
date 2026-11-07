@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ThrHIVE | Salty Hive CrossFit</title>
+  <meta name="description" content="Big news, Hive. ThrHIVE is coming to Salty Hive CrossFit in Salt Lake City. Watch the announcement and be first in line when the details drop." />
+  <meta name="theme-color" content="#0a0a09" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ThrHIVE | Salty Hive CrossFit" />
+  <meta property="og:description" content="Big news, Hive. 🐝 Watch the announcement and be first in line when the details drop." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:ital,wght@0,400;0,500;0,700;0,800;0,900;1,800&family=Kaushan+Script&family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/hero-overhead.webp" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#announcement">Skip to the announcement</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Salty Hive CrossFit, back to top">
+      <img src="assets/img/shcf-logo-white.png" alt="Salty Hive CrossFit" width="576" height="234" />
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#announcement">The Drop</a>
+      <a href="#intel">The Intel</a>
+      <a href="#reel">The Hive</a>
+      <a href="#find">Find Us</a>
+    </nav>
+    <a class="btn btn--hive btn--sm js-primary-cta" href="#join">I'm In <span aria-hidden="true">🐝</span></a>
+  </header>
+
+  <main id="top">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/img/hero-overhead.webp" alt="" width="1918" height="1279" fetchpriority="high" />
+      </div>
+      <canvas class="hero__comb" id="comb" aria-hidden="true"></canvas>
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="kicker"><span class="live-dot" aria-hidden="true"></span> Salty Hive CrossFit presents</p>
+
+        <h1 class="wordmark" id="hero-title">
+          <span class="wordmark__salty" aria-hidden="true">salty</span>
+          <span class="wordmark__row">
+            <span class="wordmark__thr">Thr</span><span class="wordmark__hive">HIVE</span>
+          </span>
+        </h1>
+
+        <p class="hero__lede">
+          <strong>Big news just dropped.</strong> Salty Hive has something new on the way, and it's built for every
+          single person in the Hive. Hit play on the announcement, lock in, and be first in line when the details go live.
+        </p>
+
+        <div class="countdown" id="countdown" data-state="scramble">
+          <p class="countdown__label" id="countdown-label">Date dropping soon</p>
+          <div class="countdown__grid" role="timer" aria-labelledby="countdown-label">
+            <div class="cd"><span class="cd__num" data-unit="d">00</span><span class="cd__unit">Days</span></div>
+            <div class="cd"><span class="cd__num" data-unit="h">00</span><span class="cd__unit">Hrs</span></div>
+            <div class="cd"><span class="cd__num" data-unit="m">00</span><span class="cd__unit">Min</span></div>
+            <div class="cd"><span class="cd__num" data-unit="s">00</span><span class="cd__unit">Sec</span></div>
+          </div>
+        </div>
+
+        <div class="hero__ctas">
+          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#join">I'm In <span aria-hidden="true">🐝</span></a>
+          <a class="btn btn--ghost btn--lg magnetic" href="#announcement">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Watch the announcement
+          </a>
+        </div>
+      </div>
+
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="badge__ring">
+          <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <text><textPath href="#circ">THRHIVE ✦ SALTY HIVE CROSSFIT ✦ SALT LAKE CITY ✦ </textPath></text>
+        </svg>
+        <svg viewBox="0 0 100 100" class="badge__hex">
+          <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" />
+          <text x="50" y="60" text-anchor="middle">SH</text>
+        </svg>
+      </div>
+
+      <a class="scroll-cue" href="#announcement" aria-label="Scroll to the announcement">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============================== TAPE ============================== -->
+    <div class="tape" aria-hidden="true">
+      <div class="tape__band tape__band--hive">
+        <div class="tape__track">
+          <span>ThrHIVE</span><b>✦</b><span>Community</span><b>✦</b><span>Hard Work</span><b>✦</b><span>Accountability</span><b>✦</b><span>One Hive</span><b>✦</b><span>Salt Lake City</span><b>✦</b>
+          <span>ThrHIVE</span><b>✦</b><span>Community</span><b>✦</b><span>Hard Work</span><b>✦</b><span>Accountability</span><b>✦</b><span>One Hive</span><b>✦</b><span>Salt Lake City</span><b>✦</b>
+        </div>
+      </div>
+      <div class="tape__band tape__band--ink">
+        <div class="tape__track tape__track--rev">
+          <span>Big news</span><b>🐝</b><span>Details dropping soon</span><b>🐝</b><span>Lock in</span><b>🐝</b><span>Bring your crew</span><b>🐝</b>
+          <span>Big news</span><b>🐝</b><span>Details dropping soon</span><b>🐝</b><span>Lock in</span><b>🐝</b><span>Bring your crew</span><b>🐝</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== ANNOUNCEMENT ============================== -->
+    <section class="section announce" id="announcement" aria-labelledby="announce-title">
+      <div class="announce__phone reveal">
+        <div class="phone">
+          <button class="yt" id="yt" type="button" aria-label="Play the ThrHIVE announcement video">
+            <img src="assets/img/announcement-poster.webp" alt="" width="404" height="720" loading="lazy" />
+            <span class="yt__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </span>
+            <span class="yt__tag" aria-hidden="true">▶ Tap to play · sound on</span>
+          </button>
+        </div>
+        <div class="phone__glow" aria-hidden="true"></div>
+      </div>
+
+      <div class="announce__copy">
+        <p class="eyebrow reveal">The announcement · <time datetime="2026-11-05">Nov 5, 2026</time></p>
+        <h2 class="display reveal" id="announce-title" data-scramble>Big news.</h2>
+        <p class="lede reveal">
+          The Hive got the word straight from the source. Hit play, turn the sound up, and hear what ThrHIVE is all
+          about. Then send it to every single person who needs to be there with you.
+        </p>
+        <ol class="steps reveal">
+          <li><span>01</span> Watch it.</li>
+          <li><span>02</span> Send it to your crew.</li>
+          <li><span>03</span> Get on the list.</li>
+        </ol>
+        <div class="row reveal">
+          <a class="btn btn--hive js-primary-cta" href="#join">Get on the list</a>
+          <a class="btn btn--ghost" href="https://youtube.com/shorts/nTL6EOq-iPo" target="_blank" rel="noopener">Watch on YouTube <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== WHAT IS IT ============================== -->
+    <section class="section define" id="what" aria-labelledby="define-title">
+      <p class="eyebrow reveal">What's in a name</p>
+      <h2 class="visually-hidden" id="define-title">What ThrHIVE means</h2>
+
+      <div class="equation">
+        <div class="eq reveal">
+          <span class="eq__op" aria-hidden="true"></span>
+          <span class="eq__word eq__word--outline">Thrive</span>
+          <p class="eq__def"><em>thrive</em> /THrīv/ <i>verb</i>: to grow. To flourish. To get after it.</p>
+        </div>
+        <div class="eq reveal">
+          <span class="eq__op" aria-hidden="true">+</span>
+          <span class="eq__word eq__word--hive">Hive</span>
+          <p class="eq__def"><em>hive</em> /hīv/ <i>noun</i>: a teeming multitude. Also a nod to Utah, the Beehive State.</p>
+        </div>
+        <div class="eq eq--total reveal">
+          <span class="eq__op" aria-hidden="true">=</span>
+          <span class="eq__word eq__word--total">Thr<b>HIVE</b></span>
+          <p class="eq__def">What happens when the whole Hive shows up, all in, at the same time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== INTEL ============================== -->
+    <section class="section intel" id="intel" aria-labelledby="intel-title">
+      <div class="section__head">
+        <p class="eyebrow reveal">Need-to-know</p>
+        <h2 class="display reveal" id="intel-title" data-scramble>The Intel</h2>
+        <p class="lede reveal">
+          Some of it is still under wraps. Every card unlocks right here the moment it's official,
+          so bookmark this page and check back often.
+        </p>
+      </div>
+
+      <div class="intel__grid" id="intel-grid">
+        <!-- Cards are rendered from js/event.config.js -->
+      </div>
+    </section>
+
+    <!-- ============================== STATEMENT ============================== -->
+    <section class="statement" aria-label="The Salty Hive way">
+      <div class="statement__bg" aria-hidden="true"><img src="assets/img/wall.webp" alt="" loading="lazy" width="1400" height="1050" /></div>
+      <p class="statement__text reveal">
+        This is CrossFit with people who <mark>give a damn</mark>.
+      </p>
+      <p class="statement__sig reveal"><span class="script">salty</span> The Salty Hive way</p>
+    </section>
+
+    <!-- ============================== NUMBERS ============================== -->
+    <section class="numbers" aria-label="Salty Hive by the numbers">
+      <div class="num reveal"><span class="num__big" data-count="3500">0</span><span class="num__label">sq ft of sweat</span></div>
+      <div class="num reveal"><span class="num__big" data-count="10">0</span><span class="num__label">coaches on the floor</span></div>
+      <div class="num reveal"><span class="num__big" data-count="3">0</span><span class="num__label">core values</span></div>
+      <div class="num reveal"><span class="num__big" data-count="1">0</span><span class="num__label">Hive</span></div>
+    </section>
+
+    <!-- ============================== REEL ============================== -->
+    <section class="reel" id="reel" aria-labelledby="reel-title">
+      <div class="reel__sticky">
+        <div class="reel__head">
+          <p class="eyebrow">The Hive in motion</p>
+          <h2 class="display" id="reel-title">This is what <span class="hl">showing up</span> looks like.</h2>
+        </div>
+        <div class="reel__viewport">
+          <div class="reel__track" id="reel-track">
+            <figure class="shot shot--wide"><img src="assets/img/trail-handstand.webp" alt="Athlete handstand-walking across the gym floor, captured as a glowing long-exposure light trail" loading="lazy" width="1600" height="1066" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-boxjump.webp" alt="Athlete mid box jump with a light trail tracing the movement" loading="lazy" width="1600" height="1066" /></figure>
+            <figure class="shot shot--tall"><img src="assets/img/celebrate.webp" alt="Two Salty Hive athletes celebrating together on a turf field" loading="lazy" width="1200" height="1200" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-muscleup.webp" alt="Ring muscle-up under the Salty Hive banner, blurred with motion" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-clean.webp" alt="Athlete racking a heavy barbell clean in a streak of warm light" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--tall"><img src="assets/img/hug.webp" alt="Athletes hugging after a workout" loading="lazy" width="1000" height="1500" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-jump.webp" alt="Athlete leaping with arms overhead, frozen with a motion trail" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-row.webp" alt="Athlete driving through a row on the erg, motion-blurred" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--tall"><img src="assets/img/flex-box.webp" alt="Athlete flexing and yelling with excitement on a plyo box" loading="lazy" width="1000" height="1500" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-pullup.webp" alt="Athlete kipping on the pull-up rig with a trail of orange light" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--wide"><img src="assets/img/trail-skierg.webp" alt="Athlete pulling on the SkiErg with a blur of motion" loading="lazy" width="1400" height="933" /></figure>
+            <figure class="shot shot--end">
+              <p>Photos by</p>
+              <a href="https://www.instagram.com/bhofferphoto/" target="_blank" rel="noopener">@bhofferphoto</a>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== VALUES ============================== -->
+    <section class="section values" aria-labelledby="values-title">
+      <div class="section__head">
+        <p class="eyebrow reveal">What we're built on</p>
+        <h2 class="display reveal" id="values-title" data-scramble>The Hive way</h2>
+        <p class="lede reveal">
+          Our community is for <strong>ANYone</strong>, but not for <strong>EVERYone</strong>. If you're willing to
+          consistently work hard, respect those around you, and hold yourself accountable, you belong here.
+        </p>
+      </div>
+      <div class="values__grid">
+        <article class="value reveal">
+          <span class="value__n">01</span>
+          <h3>Community</h3>
+          <p>We cheer for, challenge, and support each other. Every member is known, and no one goes through this journey alone.</p>
+        </article>
+        <article class="value reveal">
+          <span class="value__n">02</span>
+          <h3>Hard Work</h3>
+          <p>It's about attitude and effort, not results. Every workout gets scaled so everyone, beginner or seasoned athlete, feels challenged and motivated.</p>
+        </article>
+        <article class="value reveal">
+          <span class="value__n">03</span>
+          <h3>Accountability</h3>
+          <p>We get to know your motivations and goals, then hold you to consistency, good movement, and a routine that lasts.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================== VOICES ============================== -->
+    <section class="voices" aria-labelledby="voices-title">
+      <div class="voices__bg" aria-hidden="true"><img src="assets/img/crew-summit-camp.webp" alt="" loading="lazy" width="1600" height="1066" /></div>
+      <div class="voices__inner">
+        <p class="eyebrow">Straight from the Hive</p>
+        <h2 class="visually-hidden" id="voices-title">What members say</h2>
+        <div class="quotes" id="quotes" aria-live="polite">
+          <blockquote class="quote is-active">
+            <p>“This incredible gym goes beyond just promoting a healthy lifestyle; it truly fosters a sense of community and family. Every time I step through the doors, I feel welcomed and supported.”</p>
+            <footer>Eleonora Nedobukh</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Everyone loves their gym but this one is different. The sense of community and belonging set Salty Hive apart from other boxes I've been to.”</p>
+            <footer>Thomas C.</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“SHCF is a safe space with no judgment for success or defeat and where both are celebrated. There are always so many willing to encourage you to be and do better.”</p>
+            <footer>Jenn B.</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“This place is so much more than a place to workout. Here you'll find great friends and a CrossFit family, while breaking a sweat.”</p>
+            <footer>Sabrina M.</footer>
+          </blockquote>
+        </div>
+        <div class="quotes__dots" id="quote-dots" role="tablist" aria-label="Choose a quote"></div>
+      </div>
+    </section>
+
+    <!-- ============================== CREW ============================== -->
+    <div class="crew" aria-label="The Salty Hive coaching crew">
+      <p class="crew__label">The crew</p>
+      <div class="crew__viewport">
+        <ul class="crew__track">
+          <li>Justin Zizumbo <i>CF-L3</i></li><li>Olivia Allen <i>CF-L3</i></li><li>Samantha West <i>CF-L3</i></li><li>Trish Zizumbo <i>CF-L2</i></li><li>Erica Beck <i>CF-L2</i></li><li>Claressa Ullmayer <i>CF-L2</i></li><li>Garrett Barna <i>CF-L2</i></li><li>Megan Carroll <i>CF-L2</i></li><li>Brett Hoffer <i>CF-L1</i></li><li>Erin Reynolds <i>CF-L1</i></li>
+          <li aria-hidden="true">Justin Zizumbo <i>CF-L3</i></li><li aria-hidden="true">Olivia Allen <i>CF-L3</i></li><li aria-hidden="true">Samantha West <i>CF-L3</i></li><li aria-hidden="true">Trish Zizumbo <i>CF-L2</i></li><li aria-hidden="true">Erica Beck <i>CF-L2</i></li><li aria-hidden="true">Claressa Ullmayer <i>CF-L2</i></li><li aria-hidden="true">Garrett Barna <i>CF-L2</i></li><li aria-hidden="true">Megan Carroll <i>CF-L2</i></li><li aria-hidden="true">Brett Hoffer <i>CF-L1</i></li><li aria-hidden="true">Erin Reynolds <i>CF-L1</i></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============================== JOIN ============================== -->
+    <section class="section join" id="join" aria-labelledby="join-title">
+      <div class="join__card">
+        <div class="join__copy">
+          <p class="eyebrow reveal">Don't sleep on this</p>
+          <h2 class="display reveal" id="join-title" data-scramble>Be in the room when it drops.</h2>
+          <p class="lede reveal">
+            Details are rolling out soon. Text the Hive and tell 'em you're in, follow along on Instagram for the
+            reveals, and start recruiting your crew <em>now</em>.
+          </p>
+          <div class="join__ctas reveal" id="join-ctas">
+            <a class="btn btn--hive btn--lg" id="cta-register" href="#" hidden target="_blank" rel="noopener">Register now <span aria-hidden="true">→</span></a>
+            <a class="btn btn--hive btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20ThrHIVE!%20%F0%9F%90%9D">Text the Hive <span aria-hidden="true">💬</span></a>
+            <a class="btn btn--ghost btn--lg" id="cta-ig" href="https://www.instagram.com/saltyhivecrossfit/" target="_blank" rel="noopener">Follow @saltyhivecrossfit</a>
+            <button class="btn btn--ghost btn--lg" id="cta-cal" type="button" hidden>Add to calendar <span aria-hidden="true">📅</span></button>
+          </div>
+        </div>
+
+        <div class="hype reveal" aria-labelledby="hype-title">
+          <h3 class="hype__title" id="hype-title">How hyped are you?</h3>
+          <button class="hype__btn" id="hype-btn" type="button" aria-describedby="hype-level">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" /></svg>
+            <span>Tap</span>
+          </button>
+          <div class="hype__meter" aria-hidden="true"><span id="hype-fill"></span></div>
+          <p class="hype__level" id="hype-level" aria-live="polite">Cold start</p>
+          <p class="hype__count"><span id="hype-count">0</span> taps of pure hype</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FIND ============================== -->
+    <section class="section find" id="find" aria-labelledby="find-title">
+      <div class="find__photo reveal">
+        <img src="assets/img/crew-summit-games.webp" alt="A big group of Salty Hive athletes posing together on a turf field" loading="lazy" width="1600" height="1066" />
+      </div>
+      <div class="find__copy">
+        <p class="eyebrow reveal">Home of the Hive</p>
+        <h2 class="display reveal" id="find-title" data-scramble>Find the Hive</h2>
+        <address class="find__addr reveal">
+          <strong>Salty Hive CrossFit</strong>
+          4050 S Howick St<br />Salt Lake City, UT 84107
+        </address>
+        <ul class="find__list reveal">
+          <li><span>Text</span><a href="sms:+18014490478">(801) 449-0478</a></li>
+          <li><span>Email</span><a href="mailto:justin@saltyhivecrossfit.com">justin@saltyhivecrossfit.com</a></li>
+          <li><span>Visit</span><a href="https://www.saltyhivecrossfit.com/" target="_blank" rel="noopener">saltyhivecrossfit.com</a></li>
+        </ul>
+        <div class="row reveal">
+          <a class="btn btn--hive" href="https://www.google.com/maps/search/?api=1&amp;query=Salty+Hive+CrossFit+4050+S+Howick+St+Salt+Lake+City+UT+84107" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">Thr<b>HIVE</b></div>
+    <div class="footer__row">
+      <img src="assets/img/shcf-logo-white.png" alt="Salty Hive CrossFit" width="576" height="234" loading="lazy" />
+      <p class="footer__tag">Where training &amp; community collide.</p>
+      <nav class="footer__social" aria-label="Social">
+        <a href="https://www.instagram.com/saltyhivecrossfit/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@saltyhivecrossfit8588" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.saltyhivecrossfit.com/" target="_blank" rel="noopener">Website</a>
+      </nav>
+    </div>
+    <p class="footer__fine">© <span id="year">2026</span> Salty Hive CrossFit · 4050 S Howick St, Salt Lake City, UT · Once a part of the Hive, always a part of the Hive. 🐝</p>
+  </footer>
+
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="js/event.config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
