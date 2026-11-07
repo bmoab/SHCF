@@ -67,8 +67,8 @@ window.THRHIVE = {
 
     // Pollinators: one-time gifts.
     once: [
-      { name: "First Flight", amount: 25, line: "One gift, carried a long way." },
-      { name: "Nectar Run", amount: 100, line: "Fuel for the work." },
+      { name: "Bloom", amount: 25, line: "Small gift. Real growth." },
+      { name: "Comb Builder", amount: 100, line: "Builds what the Hive stands on." },
       { name: "Fund a Week", amount: 333, line: "One full week of a program." },
       { name: "Fund a Month", amount: 1333, line: "Four weeks, start to finish." },
     ],
