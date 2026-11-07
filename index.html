@@ -10,7 +10,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ThrHIVE · Free CrossFit for recovery, powered by the Hive" />
   <meta property="og:description" content="A new nonprofit from Salty Hive CrossFit. The Liftoff Fri, Dec 11. The first annual Thrive Throwdown Sat, Dec 12. 🐝" />
-  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:url" content="https://shcf.vercel.app/" />
+  <meta property="og:image" content="https://shcf.vercel.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -31,11 +32,13 @@
     </a>
     <nav class="nav__links" aria-label="Sections">
       <a href="#program">The Program</a>
-      <a href="#story">The Story</a>
-      <a href="#throwdown">The Throwdown</a>
-      <a href="#give">Give</a>
+      <a href="#throwdown">Throwdown</a>
+      <a href="#give">The Swarm</a>
+      <a href="#apiary">Partners</a>
+      <a href="#impact">Impact</a>
     </nav>
-    <a class="btn btn--hive btn--sm js-primary-cta" href="#throwdown">I'm In <span aria-hidden="true">🐝</span></a>
+    <a class="btn btn--ghost btn--sm nav__give" href="#give">Give</a>
+    <a class="btn btn--hive btn--sm js-primary-cta" href="#signup">Sign up <span aria-hidden="true">🐝</span></a>
   </header>
 
   <main id="top">
@@ -74,12 +77,13 @@
         </div>
 
         <div class="hero__ctas">
-          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#throwdown">I'm In <span aria-hidden="true">🐝</span></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="#story">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-            Watch the announcement
-          </a>
+          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#signup">Sign up for the Throwdown <span aria-hidden="true">🐝</span></a>
+          <a class="btn btn--ghost btn--lg magnetic" href="#give">Give 5 for Thrive · $5/mo</a>
         </div>
+        <a class="hero__watch" href="#story">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          Watch the announcement
+        </a>
       </div>
 
       <div class="badge" aria-hidden="true">
@@ -256,64 +260,214 @@
       </div>
     </section>
 
-    <!-- ============================== NUMBERS ============================== -->
-    <section class="numbers" aria-label="ThrHIVE by the numbers">
-      <div class="num reveal"><span class="num__big">$0</span><span class="num__label">cost of training for recovery programs</span></div>
-      <div class="num reveal"><span class="num__big">501(c)(3)</span><span class="num__label">nonprofit · donations can be a tax write-off</span></div>
-      <div class="num reveal"><span class="num__big" data-count="2">0</span><span class="num__label">days · Liftoff + Throwdown</span></div>
-      <div class="num reveal"><span class="num__big">1st</span><span class="num__label">annual Thrive Throwdown</span></div>
+    <!-- ============================== SIGN UP ============================== -->
+    <section class="section signup" id="signup" aria-labelledby="signup-title">
+      <div class="signup__grid">
+        <div class="signup__copy">
+          <p class="eyebrow reveal">Thrive Throwdown · Sat, Dec 12</p>
+          <h2 class="display reveal" id="signup-title">Claim your <span class="hl">spot.</span></h2>
+          <p class="lede reveal">
+            Full registration drops soon. Get on the early list and you'll be the first to know when spots open,
+            plus the format, divisions and heat times. Coming to compete, volunteer, cheer or sponsor? We want you there.
+          </p>
+          <a class="btn btn--hive btn--lg signup__register" id="cta-register" href="#" target="_blank" rel="noopener" hidden>Register now <span aria-hidden="true">→</span></a>
+          <ul class="ticks reveal">
+            <li>First dibs when registration opens</li>
+            <li>Format, divisions &amp; heat times before anyone else</li>
+            <li>Every entry fuels free CrossFit for people in recovery</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="signup-form" novalidate>
+          <p class="form__title">Get on the early list</p>
+          <fieldset class="chips">
+            <legend>I'm coming to</legend>
+            <label><input type="checkbox" name="roles" value="compete" checked /><span>Compete</span></label>
+            <label><input type="checkbox" name="roles" value="volunteer" /><span>Volunteer</span></label>
+            <label><input type="checkbox" name="roles" value="cheer" /><span>Cheer</span></label>
+            <label><input type="checkbox" name="roles" value="sponsor" /><span>Sponsor</span></label>
+          </fieldset>
+          <fieldset class="chips">
+            <legend>Which days?</legend>
+            <label><input type="radio" name="days" value="both" checked /><span>Both</span></label>
+            <label><input type="radio" name="days" value="liftoff" /><span>Liftoff · Fri</span></label>
+            <label><input type="radio" name="days" value="throwdown" /><span>Throwdown · Sat</span></label>
+          </fieldset>
+          <div class="form__row">
+            <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
+          </div>
+          <div class="form__row">
+            <label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+            <label class="field"><span>Home gym <i>(optional)</i></span><input name="home_gym" type="text" maxlength="120" /></label>
+          </div>
+          <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Put me on the list <span aria-hidden="true">🐝</span></button>
+          <p class="form__note" data-form-note role="status"></p>
+        </form>
+      </div>
     </section>
 
-    <!-- ============================== GIVE ============================== -->
+    <!-- ============================== NUMBERS ============================== -->
+    <section class="numbers" aria-label="The math behind ThrHIVE">
+      <div class="num reveal"><span class="num__big" data-money="programCost">$4,000</span><span class="num__label">funds one 12-week program</span></div>
+      <div class="num reveal"><span class="num__big" data-money="week">$333</span><span class="num__label">funds one week of it</span></div>
+      <div class="num reveal"><span class="num__big">$5<small>/mo</small></span><span class="num__label">5 for Thrive · where it starts</span></div>
+      <div class="num reveal"><span class="num__big" data-calc="membersAt5">67</span><span class="num__label">members at $5/mo fund a full program every year</span></div>
+    </section>
+
+    <!-- ============================== GIVE: THE SWARM ============================== -->
     <section class="section give" id="give" aria-labelledby="give-title">
-      <div class="give__grid">
-        <div class="give__copy">
-          <p class="eyebrow reveal">Fuel the mission</p>
-          <h2 class="display reveal" id="give-title">Help us hit <span class="hl">the number.</span></h2>
-          <p class="lede reveal">
-            No program runs without funding. ThrHIVE has a fundraising goal to hit before we welcome our first recovery
-            partners into the Hive, and the Thrive Throwdown is how we kick it off.
-          </p>
-          <div class="row reveal">
-            <a class="btn btn--hive btn--lg" id="cta-donate" href="#" target="_blank" rel="noopener" hidden>Donate to ThrHIVE <span aria-hidden="true">→</span></a>
-            <a class="btn btn--hive btn--lg" id="cta-donate-text" href="sms:+18014490478?&amp;body=I%20want%20to%20support%20ThrHIVE!%20%F0%9F%90%9D">Ask how to give <span aria-hidden="true">💬</span></a>
+      <div class="section__head">
+        <p class="eyebrow reveal">Fuel the mission</p>
+        <h2 class="display reveal" id="give-title">Join <span class="hl">the Swarm.</span></h2>
+        <p class="lede reveal">
+          A hive runs on thousands of bees each doing a little, every single day. The Swarm is ThrHIVE's monthly
+          giving community: steady support that keeps programs running all year. $5 a month won't build a program on
+          its own. <strong><span data-calc="membersAt5">67</span> of you will.</strong>
+        </p>
+      </div>
+
+      <div class="giver reveal" id="giver">
+        <div class="giver__top">
+          <div class="seg" role="radiogroup" aria-label="How often do you want to give?">
+            <button type="button" role="radio" data-freq="monthly" aria-checked="true">Monthly</button>
+            <button type="button" role="radio" data-freq="yearly" aria-checked="false">Yearly</button>
+            <button type="button" role="radio" data-freq="once" aria-checked="false">One time</button>
+          </div>
+          <p class="giver__group" id="giver-group">The Swarm · monthly members</p>
+        </div>
+
+        <div class="tiers" id="tiers" role="radiogroup" aria-label="Choose an amount"></div>
+
+        <div class="giver__summary">
+          <div class="giver__left">
+            <label class="giver__custom">
+              <span>Or choose your own</span>
+              <span class="giver__input"><b>$</b><input id="custom-amount" type="number" inputmode="numeric" min="1" step="1" placeholder="Amount" aria-label="Custom amount in dollars" /></span>
+            </label>
+            <p class="giver__you" id="giver-you">You're joining the Swarm as <b>5 for Thrive</b></p>
+            <p class="giver__amount" id="giver-amount">$5<small>/month</small></p>
+            <p class="giver__impact" id="giver-impact" aria-live="polite"></p>
+          </div>
+          <div class="giver__go">
+            <a class="btn btn--hive btn--lg" id="giver-btn" href="#give">Give $5 monthly</a>
+            <p class="giver__fine">ThrHIVE is a 501(c)(3). Your gift can be a tax write-off.</p>
           </div>
         </div>
 
-        <div class="meter reveal" id="meter" data-state="locked" aria-labelledby="meter-title">
-          <p class="meter__label" id="meter-title">ThrHIVE fundraising goal</p>
-          <div class="meter__comb" id="meter-comb" aria-hidden="true"></div>
-          <p class="meter__status" id="meter-status" aria-live="polite">Goal reveal coming soon</p>
-          <p class="meter__sub" id="meter-sub">The number drops right here. Watch it fill.</p>
+        <form class="form form--pledge" id="pledge-form" hidden novalidate>
+          <p class="form__title">Online giving opens soon. Lock in your pledge.</p>
+          <p class="form__sub" id="pledge-sub">We'll send your secure giving link the moment it's live. No payment today.</p>
+          <div class="form__row">
+            <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
+          </div>
+          <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Lock in my pledge <span aria-hidden="true">🐝</span></button>
+          <p class="form__note" data-form-note role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================== APIARY ============================== -->
+    <section class="section apiary" id="apiary" aria-labelledby="apiary-title">
+      <div class="apiary__head">
+        <div>
+          <p class="eyebrow reveal">For businesses &amp; big-hearted donors</p>
+          <h2 class="display reveal" id="apiary-title">The <span class="hl">Apiary.</span></h2>
         </div>
+        <p class="lede reveal">
+          An apiary is where the hives live. Apiary partners are the businesses, families and community leaders who
+          fund entire programs, and then get to see exactly what their gift built.
+        </p>
       </div>
 
-      <div class="ways">
-        <a class="way reveal" href="#throwdown">
-          <span class="way__n">01</span>
-          <h3>Compete</h3>
-          <p>Throw down on Saturday, Dec 12. Every entry fuels the mission.</p>
-          <span class="way__go" aria-hidden="true">→</span>
-        </a>
-        <a class="way reveal js-donate-link" href="sms:+18014490478?&amp;body=I%20want%20to%20support%20ThrHIVE!%20%F0%9F%90%9D" style="--d:.06s">
-          <span class="way__n">02</span>
-          <h3>Donate</h3>
-          <p>ThrHIVE is a 501(c)(3), so your gift can be a tax write-off.</p>
-          <span class="way__go" aria-hidden="true">→</span>
-        </a>
-        <a class="way reveal" href="#find" style="--d:.12s">
-          <span class="way__n">03</span>
-          <h3>Show up</h3>
-          <p>Pack the house for the Liftoff and the Throwdown. Volume matters.</p>
-          <span class="way__go" aria-hidden="true">→</span>
-        </a>
-        <button class="way reveal" type="button" id="share-btn" style="--d:.18s">
-          <span class="way__n">04</span>
-          <h3>Spread it</h3>
-          <p>Send this page to your crew, your family, your coworkers. Everyone.</p>
-          <span class="way__go" aria-hidden="true">↗</span>
-        </button>
+      <div class="levels">
+        <article class="level reveal">
+          <p class="level__tag">Program Sponsor</p>
+          <p class="level__price" data-money="programCost">$4,000</p>
+          <p class="level__what">Fund one full 12-week program for a local recovery center. Start to finish, it's yours.</p>
+        </article>
+        <article class="level level--feature reveal" style="--d:.08s">
+          <p class="level__tag">Year-Round Sponsor</p>
+          <p class="level__price" data-money="year">$16,000</p>
+          <p class="level__what">Four programs back to back. A full year of ThrHIVE, with your name on all of it.</p>
+        </article>
+        <article class="level reveal" style="--d:.16s">
+          <p class="level__tag">Throwdown Partner</p>
+          <p class="level__price">Let's talk</p>
+          <p class="level__what">Put your brand on the first annual Thrive Throwdown, Dec 12, in front of the whole community.</p>
+        </article>
       </div>
+
+      <div class="apiary__bottom">
+        <div class="perks reveal">
+          <h3>What Apiary partners get</h3>
+          <ul>
+            <li><b>Program reports.</b> Updates at kickoff, midpoint and graduation for every program you fund.</li>
+            <li><b>Your name on the wall.</b> Recognition on the ThrHIVE wall at Salty Hive and right here on this site.</li>
+            <li><b>A seat at graduation.</b> An invite to the graduation workout when your program finishes.</li>
+            <li><b>Throwdown shout-outs.</b> Recognition at the Thrive Throwdown and across our socials.</li>
+          </ul>
+        </div>
+        <form class="form reveal" id="apiary-form" novalidate>
+          <p class="form__title">Start the conversation</p>
+          <div class="form__row">
+            <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
+            <label class="field"><span>Company <i>(optional)</i></span><input name="company" type="text" autocomplete="organization" maxlength="160" /></label>
+          </div>
+          <div class="form__row">
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
+            <label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+          </div>
+          <label class="field"><span>I'm interested in</span>
+            <select name="tier">
+              <option value="program">Program Sponsor</option>
+              <option value="year">Year-Round Sponsor</option>
+              <option value="throwdown">Throwdown Partner</option>
+              <option value="other">Something else</option>
+            </select>
+          </label>
+          <label class="field"><span>Anything else? <i>(optional)</i></span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
+          <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Become a partner <span aria-hidden="true">→</span></button>
+          <p class="form__note" data-form-note role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================== IMPACT ============================== -->
+    <section class="section impact" id="impact" aria-labelledby="impact-title">
+      <div class="section__head">
+        <p class="eyebrow reveal">Where it goes</p>
+        <h2 class="display reveal" id="impact-title">Follow <span class="hl">every dollar.</span></h2>
+        <p class="lede reveal">
+          Every program has a name, a partner and a finish line. When you give, you don't just get a receipt.
+          You get the story of what your gift built.
+        </p>
+      </div>
+
+      <div class="impact__grid">
+        <div class="meter reveal" id="meter" data-state="locked" aria-labelledby="meter-title">
+          <p class="meter__label"><span id="meter-title">Program 01</span> · <span id="meter-phase">Funding now</span></p>
+          <div class="meter__comb" id="meter-comb" aria-hidden="true"></div>
+          <p class="meter__status" id="meter-status" aria-live="polite">$4,000 goal</p>
+          <p class="meter__sub" id="meter-sub">Every cell is $200. Let's fill the Hive.</p>
+          <a class="btn btn--hive meter__cta" href="#give">Help fill it</a>
+        </div>
+
+        <ol class="journey">
+          <li class="reveal"><span class="journey__when">Funded</span><h3>Goal hit</h3><p>We announce the local recovery program your gift is going to.</p></li>
+          <li class="reveal" style="--d:.06s"><span class="journey__when">Week 1</span><h3>Day one</h3><p>First class at Salty Hive. Coaches, gear, and a whole crew that's been waiting for them.</p></li>
+          <li class="reveal" style="--d:.12s"><span class="journey__when">Week 6</span><h3>Halfway</h3><p>A midpoint update: attendance, firsts, and the milestones that matter.</p></li>
+          <li class="reveal" style="--d:.18s"><span class="journey__when">Week 12</span><h3>Graduation</h3><p>A graduation workout with the Hive cheering, and a final report to everyone who made it happen.</p></li>
+        </ol>
+      </div>
+      <p class="privacy reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/></svg>
+        <span><b>Recovery is personal.</b> Names, photos and stories are only ever shared with a participant's permission.</span>
+      </p>
     </section>
 
     <!-- ============================== REEL ============================== -->
@@ -418,16 +572,17 @@
       <div class="join__card">
         <div class="join__copy">
           <p class="eyebrow reveal">Lock it in</p>
-          <h2 class="display reveal" id="join-title" data-scramble>Be part of something bigger.</h2>
+          <h2 class="display reveal" id="join-title" data-scramble>Sign up. Give. Show up.</h2>
           <p class="lede reveal">
-            Save both dates, recruit your crew, and keep an eye on this page. Registration, the fundraising goal and the
-            full Throwdown details are all dropping <em>soon</em>.
+            Every sign-up packs the house. Every Swarm member keeps a program running. Every share brings someone new
+            into the Hive. Pick one. Or all three.
           </p>
           <div class="join__ctas reveal" id="join-ctas">
-            <a class="btn btn--hive btn--lg" id="cta-register" href="#" hidden target="_blank" rel="noopener">Register now <span aria-hidden="true">→</span></a>
-            <button class="btn btn--hive btn--lg" id="cta-cal" type="button">Save Dec 11–12 <span aria-hidden="true">📅</span></button>
-            <a class="btn btn--ghost btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20the%20Thrive%20Throwdown!%20%F0%9F%90%9D">Text the Hive <span aria-hidden="true">💬</span></a>
-            <a class="btn btn--ghost btn--lg" id="cta-ig" href="https://www.instagram.com/saltyhivecrossfit/" target="_blank" rel="noopener">Follow @saltyhivecrossfit</a>
+            <a class="btn btn--hive btn--lg js-primary-cta" href="#signup">Sign up <span aria-hidden="true">🐝</span></a>
+            <a class="btn btn--hive btn--lg" href="#give">Join the Swarm</a>
+            <button class="btn btn--ghost btn--lg" id="cta-cal" type="button">Save Dec 11–12 <span aria-hidden="true">📅</span></button>
+            <button class="btn btn--ghost btn--lg" id="share-btn" type="button">Share this page <span aria-hidden="true">↗</span></button>
+            <a class="btn btn--ghost btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20ThrHIVE!%20%F0%9F%90%9D">Text the Hive <span aria-hidden="true">💬</span></a>
           </div>
         </div>
 

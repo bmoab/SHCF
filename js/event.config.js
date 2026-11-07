@@ -5,10 +5,10 @@
 
    - Any intel card with `value: null` shows as a locked
      "CLASSIFIED / DROPPING SOON" card. Fill it in and it unlocks.
-   - Set `registerUrl` / `donateUrl` and the Register / Donate buttons
-     light up everywhere on the page.
-   - Set `goal` (and `raised`) to switch the honeycomb meter from
-     "goal reveal coming" to a live fundraising tracker.
+   - Paste donation links into `giving.links` and the Give buttons go
+     straight to checkout. Until then they collect pledges.
+   - Update `programs[].raised` as money comes in and the honeycomb
+     tracker fills.
    ========================================================================== */
 
 window.THRHIVE = {
@@ -19,7 +19,7 @@ window.THRHIVE = {
   timeTBA: true,
   countdownLabel: "Thrive Throwdown · Sat, Dec 12",
 
-  /* --- Calendar invite (the "Add to calendar" button) -------------------- */
+  /* --- Calendar invite (the "Save Dec 11–12" button) --------------------- */
   // Dates only = all-day events. Add start/end ISO times once they're known,
   // e.g. { title: "...", start: "2026-12-12T08:00:00-07:00", end: "2026-12-12T15:00:00-07:00" }
   calendar: [
@@ -37,16 +37,53 @@ window.THRHIVE = {
     { label: "The Format", value: null, teaser: "What you'll be doing. Classified." },
     { label: "Divisions", value: null, teaser: "Who's in. Stay tuned." },
     { label: "Entry", value: null, teaser: "Price drops with the details." },
-    { label: "Sign-ups", value: null, teaser: "Registration opens soon." },
+    { label: "Registration", value: null, teaser: "Get on the early list below." },
   ],
 
-  /* --- Calls to action --------------------------------------------------- */
-  registerUrl: null, // Throwdown registration link (Competition Corner, etc.)
-  donateUrl: null,   // ThrHIVE donation page
+  // Official Throwdown registration link (Competition Corner, Zeffy, etc.).
+  // When set, a big REGISTER button appears above the early-list form.
+  registerUrl: null,
 
-  /* --- Fundraising goal (honeycomb meter) -------------------------------- */
-  goal: null,   // e.g. 25000
-  raised: null, // e.g. 6200
+  /* --- Giving ------------------------------------------------------------ */
+  giving: {
+    programCost: 4000, // what one 12-week ThrHIVE program costs
+    programWeeks: 12,
+
+    // Checkout page for each way to give (Zeffy, Givebutter, Donorbox,
+    // Stripe Payment Links...). Leave null and the button collects a pledge
+    // (name + email) so you can follow up when online giving is live.
+    links: { monthly: null, yearly: null, once: null },
+    // If your checkout accepts the amount in its URL (e.g. ?amount=25),
+    // put the parameter name here and the chosen amount carries over.
+    amountParam: null,
+
+    // The Swarm: recurring tiers. `amount` is per month; yearly = 12x.
+    swarm: [
+      { name: "5 for Thrive", amount: 5, line: "Where every swarm starts." },
+      { name: "Worker Bee", amount: 25, line: "The steady engine of the Hive." },
+      { name: "Honey Maker", amount: 50, line: "Turns sweat into something sweet." },
+      { name: "Hive Keeper", amount: 100, line: "Keeps the whole thing running." },
+    ],
+
+    // Pollinators: one-time gifts.
+    once: [
+      { name: "First Flight", amount: 25, line: "One gift, carried a long way." },
+      { name: "Nectar Run", amount: 100, line: "Fuel for the work." },
+      { name: "Fund a Week", amount: 333, line: "One full week of a program." },
+      { name: "Fund a Month", amount: 1333, line: "Four weeks, start to finish." },
+    ],
+  },
+
+  /* --- Program tracker (the honeycomb meter) ----------------------------- */
+  // One entry per 12-week program. Update `raised` as donations come in.
+  programs: [
+    { name: "Program 01", goal: 4000, raised: null, status: "Funding now" },
+  ],
+
+  /* --- Where form submissions go ----------------------------------------- */
+  // Supabase project URL + publishable key (see supabase/schema.sql).
+  // Leave null and forms open a pre-filled email to the gym instead.
+  backend: { supabaseUrl: null, supabaseKey: null },
 
   /* --- Gym info (already filled in) ------------------------------------- */
   announcedOn: "2026-11-05",

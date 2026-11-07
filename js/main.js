@@ -199,26 +199,6 @@
   }
 
   /* ------------------------------------------------------------------------
-     Register / donate links from config
-     ------------------------------------------------------------------------ */
-  const external = (a, url) => { a.href = url; a.target = "_blank"; a.rel = "noopener"; };
-  if (C.registerUrl) {
-    const reg = $("#cta-register");
-    external(reg, C.registerUrl); reg.hidden = false;
-    $$(".js-primary-cta").forEach((a) => {
-      external(a, C.registerUrl);
-      if (a.firstChild && a.firstChild.nodeType === 3) a.firstChild.textContent = "Register ";
-    });
-  }
-  if (C.donateUrl) {
-    const don = $("#cta-donate");
-    external(don, C.donateUrl); don.hidden = false;
-    const askBtn = $("#cta-donate-text");
-    if (askBtn) askBtn.hidden = true;
-    $$(".js-donate-link").forEach((a) => external(a, C.donateUrl));
-  }
-
-  /* ------------------------------------------------------------------------
      Calendar invite (.ics) for the Liftoff + Throwdown
      ------------------------------------------------------------------------ */
   const calBtn = $("#cta-cal");
@@ -254,24 +234,30 @@
   }
 
   /* ------------------------------------------------------------------------
-     Fundraising honeycomb meter
+     Program tracker (honeycomb meter): 20 cells, each 1/20 of the goal
      ------------------------------------------------------------------------ */
   const meter = $("#meter");
   if (meter) {
+    const prog = (Array.isArray(C.programs) && C.programs[0]) || { name: "Program 01", goal: 4000 };
+    const goal = Number(prog.goal) || 4000;
+    const CELLS = 20;
     const comb = $("#meter-comb");
-    const CELLS = 24;
     comb.innerHTML = Array.from({ length: CELLS }, (_, i) => `<i style="--i:${i}"></i>`).join("");
-    const goal = Number(C.goal) || 0;
-    if (goal > 0) {
-      const raised = Math.max(0, Number(C.raised) || 0);
-      const pct = clamp(raised / goal, 0, 1);
+    $("#meter-title").textContent = prog.name || "Program 01";
+    $("#meter-phase").textContent = prog.status || "Funding now";
+    const raised = Math.max(0, Number(prog.raised) || 0);
+    $("#meter-status").textContent = raised ? `${money(raised)} of ${money(goal)}` : `${money(goal)} goal`;
+    $("#meter-sub").textContent = raised
+      ? `${Math.min(100, Math.round((raised / goal) * 100))}% funded. Every cell is ${money(goal / CELLS)}.`
+      : `Every cell is ${money(goal / CELLS)}. Let's fill the Hive.`;
+    if (raised) {
       meter.dataset.state = "live";
-      $("#meter-status").textContent = raised ? `${money(raised)} raised` : `Goal: ${money(goal)}`;
-      $("#meter-sub").textContent = raised
-        ? `${Math.round(pct * 100)}% of our ${money(goal)} goal. Let's fill the Hive.`
-        : "Every dollar fills a cell. Let's fill the Hive.";
-      const fill = () => $$("i", comb).forEach((c, i) => c.classList.toggle("is-on", i < Math.round(pct * CELLS)));
-      new IntersectionObserver(([e], o) => { if (e.isIntersecting) { fill(); o.disconnect(); } }, { threshold: 0.4 }).observe(meter);
+      const on = Math.min(CELLS, Math.round((raised / goal) * CELLS));
+      new IntersectionObserver(([e], o) => {
+        if (!e.isIntersecting) return;
+        $$("i", comb).forEach((c, i) => c.classList.toggle("is-on", i < on));
+        o.disconnect();
+      }, { threshold: 0.4 }).observe(meter);
     }
   }
 
@@ -490,6 +476,290 @@
       const r = hypeBtn.getBoundingClientRect();
       burst(e.clientX || r.left + r.width / 2, e.clientY || r.top + r.height / 2, taps % 10 === 0 ? 48 : 16);
     });
+  }
+
+  /* ------------------------------------------------------------------------
+     Giving math (everything derives from the program cost in the config)
+     ------------------------------------------------------------------------ */
+  const G = Object.assign({ programCost: 4000, programWeeks: 12, links: {}, swarm: [], once: [] }, C.giving || {});
+  const COST = Number(G.programCost) || 4000;
+  const WEEKS = Number(G.programWeeks) || 12;
+  const WEEK = COST / WEEKS;
+  const membersFor = (perYear) => Math.ceil(COST / perYear);
+  const calc = {
+    programCost: money(COST),
+    week: money(WEEK),
+    year: money(COST * 4),
+    membersAt5: String(membersFor(5 * 12)),
+  };
+  $$("[data-money]").forEach((el) => { if (calc[el.dataset.money]) el.textContent = calc[el.dataset.money]; });
+  $$("[data-calc]").forEach((el) => { if (calc[el.dataset.calc]) el.textContent = calc[el.dataset.calc]; });
+  const tierOpt = { program: `Program Sponsor (${money(COST)})`, year: `Year-Round Sponsor (${money(COST * 4)})` };
+  $$('#apiary-form option').forEach((o) => { if (tierOpt[o.value]) o.textContent = tierOpt[o.value]; });
+
+  // "$333 funds a week": allow a dollar of rounding so $333 counts as 1/12 of $4,000
+  const weeksOf = (amt) => {
+    const w = amt / WEEK;
+    return Math.abs(w - Math.round(w)) < 0.05 ? String(Math.round(w)) : w.toFixed(1);
+  };
+  const atLeastAWeek = (amt) => amt >= WEEK - 1;
+
+  const impactLine = (freq, amt) => {
+    if (!amt || amt <= 0) return "";
+    if (freq === "once") {
+      if (amt >= COST - 1) {
+        const n = Math.max(1, Math.round(amt / COST * 10) / 10);
+        return `That funds <em>${n > 1 ? n + " full programs" : "a full " + WEEKS + "-week program"}</em> on its own.`;
+      }
+      if (atLeastAWeek(amt)) {
+        const label = weeksOf(amt);
+        return `That funds <em>${label} week${label === "1" ? "" : "s"}</em> of a ${WEEKS}-week program.`;
+      }
+      return `<em>${membersFor(amt)} gifts</em> like yours fund a full ${WEEKS}-week program.`;
+    }
+    const perYear = freq === "monthly" ? amt * 12 : amt;
+    if (perYear >= COST) return `You fund <em>a full ${WEEKS}-week program every year</em> on your own.`;
+    return `<em>${membersFor(perYear)} members</em> giving like you fund a full ${WEEKS}-week program every year.`;
+  };
+
+  /* ------------------------------------------------------------------------
+     The Swarm: frequency toggle + tiers + summary + checkout/pledge
+     ------------------------------------------------------------------------ */
+  const giver = $("#giver");
+  const state = { freq: "monthly", amount: 5, name: "", custom: false };
+  if (giver) {
+    const tiersEl = $("#tiers");
+    const customIn = $("#custom-amount");
+    const btn = $("#giver-btn");
+    const pledgeForm = $("#pledge-form");
+    const groups = {
+      monthly: { label: "The Swarm · monthly members", unit: "/mo", long: "/month", verb: "monthly", join: "You're joining the Swarm as" },
+      yearly: { label: "The Swarm · yearly members", unit: "/yr", long: "/year", verb: "yearly", join: "You're joining the Swarm as" },
+      once: { label: "Pollinators · one-time gifts", unit: "", long: " one time", verb: "once", join: "You're giving as a" },
+    };
+    const tiersFor = (freq) => (freq === "once" ? G.once : G.swarm.map((t) => ({ ...t, amount: freq === "yearly" ? t.amount * 12 : t.amount })));
+    const mathFor = (freq, amt) => {
+      if (freq === "once") return atLeastAWeek(amt) ? `${weeksOf(amt)} wk of a program` : `${membersFor(amt)} of these = 1 program`;
+      const perYear = freq === "monthly" ? amt * 12 : amt;
+      return perYear >= COST ? "1 full program / yr" : `${membersFor(perYear)} of you = 1 program / yr`;
+    };
+
+    const renderTiers = () => {
+      const g = groups[state.freq];
+      tiersEl.innerHTML = tiersFor(state.freq).map((t) => `
+        <button type="button" class="tier" role="radio" aria-checked="${!state.custom && t.amount === state.amount}" data-amount="${t.amount}" data-name="${esc(t.name)}">
+          <span class="tier__name">${esc(t.name)}</span>
+          <span class="tier__amt">${money(t.amount)}<small>${g.unit}</small></span>
+          <span class="tier__line">${esc(t.line || "")}</span>
+          <span class="tier__math">${mathFor(state.freq, t.amount)}</span>
+        </button>`).join("");
+      $("#giver-group").textContent = g.label;
+    };
+
+    const checkoutUrl = () => {
+      const base = (G.links || {})[state.freq];
+      if (!base) return null;
+      if (!G.amountParam) return base;
+      try { const u = new URL(base); u.searchParams.set(G.amountParam, String(state.amount)); return u.toString(); }
+      catch (e) { return base; }
+    };
+
+    const renderSummary = () => {
+      const g = groups[state.freq];
+      let you;
+      if (state.freq === "once") you = `Pollinator gift · <b>${esc(state.custom ? "Your own amount" : state.name)}</b>`;
+      else you = state.custom ? "You're joining <b>the Swarm</b>" : `You're joining the Swarm as <b>${esc(state.name)}</b>`;
+      $("#giver-you").innerHTML = state.amount > 0 ? you : "Pick an amount";
+      $("#giver-amount").innerHTML = state.amount > 0 ? `${money(state.amount)}<small>${g.long}</small>` : "$0";
+      $("#giver-impact").innerHTML = impactLine(state.freq, state.amount);
+      const url = checkoutUrl();
+      const amountText = `${money(state.amount)}${state.freq === "once" ? "" : " " + g.verb}`;
+      btn.textContent = `${url ? "Give" : "Pledge"} ${amountText} →`;
+      if (url) { btn.href = url; btn.target = "_blank"; btn.rel = "noopener"; }
+      else { btn.href = "#pledge-form"; btn.removeAttribute("target"); }
+      btn.classList.toggle("is-disabled", !(state.amount > 0));
+      const sub = $("#pledge-sub");
+      if (sub) sub.textContent = `${money(state.amount || 0)}${state.freq === "once" ? " one time" : g.long}. We'll send your secure giving link the moment online giving is live. No payment today.`;
+    };
+
+    const pickFirst = () => {
+      const list = tiersFor(state.freq);
+      const t = list[0] || { amount: 5, name: "" };
+      state.amount = t.amount; state.name = t.name; state.custom = false; customIn.value = "";
+    };
+
+    $$(".seg button", giver).forEach((b) => b.addEventListener("click", () => {
+      state.freq = b.dataset.freq;
+      $$(".seg button", giver).forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+      // keep the same tier position when switching between monthly and yearly
+      const idx = Math.max(0, tiersFor(state.freq === "yearly" ? "monthly" : state.freq).findIndex((t) => t.name === state.name));
+      if (!state.custom && state.freq !== "once" && G.swarm[idx]) {
+        state.name = G.swarm[idx].name;
+        state.amount = state.freq === "yearly" ? G.swarm[idx].amount * 12 : G.swarm[idx].amount;
+      } else if (!state.custom) pickFirst();
+      renderTiers(); renderSummary();
+    }));
+    tiersEl.addEventListener("click", (e) => {
+      const t = e.target.closest(".tier");
+      if (!t) return;
+      state.amount = Number(t.dataset.amount); state.name = t.dataset.name; state.custom = false; customIn.value = "";
+      renderTiers(); renderSummary();
+    });
+    customIn.addEventListener("input", () => {
+      const v = Math.round(Number(customIn.value));
+      if (v > 0) { state.amount = v; state.custom = true; }
+      else { pickFirst(); }
+      renderTiers(); renderSummary();
+    });
+    btn.addEventListener("click", (e) => {
+      if (!(state.amount > 0)) { e.preventDefault(); customIn.focus(); return; }
+      if (checkoutUrl()) return; // goes to checkout
+      e.preventDefault();
+      pledgeForm.hidden = false;
+      pledgeForm.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      const first = pledgeForm.querySelector('input[name="name"]');
+      if (first) setTimeout(() => first.focus({ preventScroll: true }), 400);
+    });
+
+    // Start on monthly with the first tier (5 for Thrive) selected
+    pickFirst();
+    renderTiers(); renderSummary();
+  }
+
+  /* ------------------------------------------------------------------------
+     Forms → Supabase (or a pre-filled email when no backend is set)
+     ------------------------------------------------------------------------ */
+  const B = C.backend || {};
+  const hasBackend = !!(B.supabaseUrl && B.supabaseKey);
+  const saveRecord = async (table, record) => {
+    const headers = { apikey: B.supabaseKey, "Content-Type": "application/json", Prefer: "return=minimal" };
+    if (/^eyJ/.test(B.supabaseKey)) headers.Authorization = `Bearer ${B.supabaseKey}`;
+    const res = await fetch(`${B.supabaseUrl.replace(/\/$/, "")}/rest/v1/${table}`, { method: "POST", headers, body: JSON.stringify(record) });
+    if (!res.ok) throw new Error(`Save failed (${res.status})`);
+  };
+  const mailFallback = (subject, lines) => {
+    const body = lines.filter(Boolean).join("\n");
+    window.location.href = `mailto:${C.email || "justin@saltyhivecrossfit.com"}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+  const clean = (v, max) => String(v || "").trim().slice(0, max);
+
+  const wireForm = (form, { table, build, subject, toLines, done }) => {
+    if (!form) return;
+    const note = form.querySelector("[data-form-note]");
+    const submit = form.querySelector('button[type="submit"]');
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      note.textContent = ""; note.classList.remove("is-error");
+      if (form.website && form.website.value) return; // bot trap
+      let ok = true;
+      $$("input[required]", form).forEach((i) => {
+        const bad = !i.value.trim() || !i.checkValidity();
+        i.setAttribute("aria-invalid", String(bad));
+        if (bad && ok) { ok = false; i.focus(); }
+      });
+      if (!ok) { note.textContent = "Add your name and a valid email so we can reach you."; note.classList.add("is-error"); return; }
+      const record = build(new FormData(form));
+      submit.disabled = true;
+      const old = submit.innerHTML;
+      submit.textContent = "Sending…";
+      try {
+        if (hasBackend) await saveRecord(table, record);
+        else mailFallback(subject, toLines(record));
+        const d = done(record);
+        const box = document.createElement("div");
+        box.className = "form__done";
+        box.innerHTML = `<h3>${d.title}</h3><p>${d.body}</p>${hasBackend ? "" : '<p class="form__sub">Your email app just opened with everything filled in. Hit send and you\'re set.</p>'}`;
+        form.appendChild(box);
+        form.classList.add("is-done");
+        const r = form.getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + 60, 40);
+        toast(d.toast);
+      } catch (err) {
+        note.textContent = "That didn't go through. Try again, or text the Hive at (801) 449-0478.";
+        note.classList.add("is-error");
+      } finally {
+        submit.disabled = false; submit.innerHTML = old;
+      }
+    });
+  };
+
+  wireForm($("#signup-form"), {
+    table: "signups",
+    subject: "Thrive Throwdown: put me on the early list 🐝",
+    build: (fd) => ({
+      name: clean(fd.get("name"), 120),
+      email: clean(fd.get("email"), 200),
+      phone: clean(fd.get("phone"), 40) || null,
+      home_gym: clean(fd.get("home_gym"), 120) || null,
+      roles: fd.getAll("roles").map(String).slice(0, 4),
+      days: String(fd.get("days") || "both"),
+    }),
+    toLines: (r) => [
+      "Put me on the Thrive Throwdown early list!", "",
+      `Name: ${r.name}`, `Email: ${r.email}`, r.phone && `Phone: ${r.phone}`, r.home_gym && `Home gym: ${r.home_gym}`,
+      `Coming to: ${r.roles.join(", ") || "not sure yet"}`, `Days: ${r.days}`,
+    ],
+    done: (r) => ({
+      title: `You're on the list, ${esc(r.name.split(" ")[0])}.`,
+      body: "You'll hear first when registration opens. Now go recruit your crew.",
+      toast: "You're on the list 🐝",
+    }),
+  });
+
+  wireForm($("#pledge-form"), {
+    table: "pledges",
+    subject: "ThrHIVE pledge 🐝",
+    build: (fd) => ({
+      kind: "individual",
+      name: clean(fd.get("name"), 120),
+      email: clean(fd.get("email"), 200),
+      frequency: state.freq,
+      amount: state.amount,
+      tier: state.custom ? null : state.name,
+    }),
+    toLines: (r) => [
+      "I want to pledge to ThrHIVE!", "",
+      `Name: ${r.name}`, `Email: ${r.email}`,
+      `Pledge: ${money(r.amount)} ${r.frequency === "once" ? "one time" : r.frequency}${r.tier ? ` (${r.tier})` : ""}`,
+      "", "Send me the giving link when it's live.",
+    ],
+    done: (r) => ({
+      title: r.frequency === "once" ? "Thank you, Pollinator." : "Welcome to the Swarm.",
+      body: `Your ${money(r.amount)}${r.frequency === "once" ? "" : r.frequency === "monthly" ? "/month" : "/year"} pledge is locked in. We'll email your secure giving link the moment it's live.`,
+      toast: "Pledge locked in 🐝",
+    }),
+  });
+
+  wireForm($("#apiary-form"), {
+    table: "pledges",
+    subject: "ThrHIVE Apiary partnership",
+    build: (fd) => ({
+      kind: "partner",
+      name: clean(fd.get("name"), 120),
+      email: clean(fd.get("email"), 200),
+      phone: clean(fd.get("phone"), 40) || null,
+      company: clean(fd.get("company"), 160) || null,
+      tier: String(fd.get("tier") || "other"),
+      message: clean(fd.get("message"), 1000) || null,
+    }),
+    toLines: (r) => [
+      "I'm interested in becoming a ThrHIVE Apiary partner.", "",
+      `Name: ${r.name}`, r.company && `Company: ${r.company}`, `Email: ${r.email}`, r.phone && `Phone: ${r.phone}`,
+      `Interested in: ${r.tier}`, r.message && `\n${r.message}`,
+    ],
+    done: () => ({
+      title: "Let's build something.",
+      body: "Thanks for reaching out. Justin will be in touch soon to talk through it.",
+      toast: "Message sent 🐝",
+    }),
+  });
+
+  /* ------------------------------------------------------------------------
+     Register link from config
+     ------------------------------------------------------------------------ */
+  if (C.registerUrl) {
+    const reg = $("#cta-register");
+    reg.href = C.registerUrl; reg.hidden = false;
   }
 
   // A little celebration for every "I'm in" click too
