@@ -24,7 +24,7 @@ window.THRHIVE = {
   // e.g. { title: "...", start: "2026-12-12T08:00:00-07:00", end: "2026-12-12T15:00:00-07:00" }
   calendar: [
     { title: "The Liftoff @ Salty Hive CrossFit", date: "2026-12-11" },
-    { title: "Thrive Throwdown @ Salty Hive CrossFit 🐝", date: "2026-12-12" },
+    { title: "Thrive Throwdown @ Salty Hive CrossFit", date: "2026-12-12" },
   ],
 
   /* --- Throwdown game plan cards ---------------------------------------------- */

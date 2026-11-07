@@ -164,6 +164,8 @@ button { font: inherit; color: inherit; }
   will-change: transform;
 }
 .btn svg { width: 1.1em; height: 1.1em; }
+.ico { display: inline-block; width: 1em; height: 1em; flex: none; vertical-align: -0.12em; }
+.btn .ico { width: 1.05em; height: 1.05em; }
 .btn--hive {
   --bg: var(--hive); --fg: var(--ink); --bd: var(--hive);
   box-shadow: 0 0 0 0 rgba(232, 245, 42, 0.5), 0 10px 30px -10px rgba(232, 245, 42, 0.6);
@@ -466,7 +468,8 @@ button { font: inherit; color: inherit; }
   animation: marquee 32s linear infinite;
   padding-right: 0.6em;
 }
-.tape__track b { font-weight: 400; font-size: 0.7em; }
+.tape__track b { font-weight: 400; font-size: 0.7em; display: inline-flex; }
+.tape__track b .ico { width: 0.9em; height: 0.9em; vertical-align: 0; }
 .tape__track--rev { animation-direction: reverse; animation-duration: 40s; font-family: var(--f-mono); font-weight: 700; font-size: clamp(0.9rem, 0.7rem + 0.8vw, 1.2rem); letter-spacing: 0.18em; }
 
 /* ==========================================================================
@@ -529,6 +532,7 @@ button { font: inherit; color: inherit; }
 .yt:hover .yt__play { transform: scale(1.1); }
 .yt__tag {
   position: absolute; left: 0; right: 0; bottom: 18px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
   text-align: center;
   font-family: var(--f-mono); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--bone);
@@ -963,9 +967,9 @@ button { font: inherit; color: inherit; }
 .tier[aria-checked="true"] .tier__amt small,
 .tier[aria-checked="true"] .tier__math { color: var(--ink); }
 .tier[aria-checked="true"]::after {
-  content: "✓"; position: absolute; right: 12px; top: 12px;
-  width: 24px; height: 24px; display: grid; place-items: center;
-  font-size: 0.8rem; font-weight: 800; border-radius: 50%; background: var(--ink); color: var(--hive);
+  content: ""; position: absolute; right: 12px; top: 12px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23e8f52a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat;
 }
 .giver__summary {
   display: grid; gap: 22px; align-items: end;
@@ -1395,6 +1399,7 @@ button { font: inherit; color: inherit; }
   background: var(--hive);
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
+.confetti .hex--ring { background: var(--bone); }
 
 /* ==========================================================================
    Phone tweaks

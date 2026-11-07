@@ -9,7 +9,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ThrHIVE · Free CrossFit for recovery, powered by the Hive" />
-  <meta property="og:description" content="A new nonprofit from Salty Hive CrossFit. The Liftoff Fri, Dec 11. The first annual Thrive Throwdown Sat, Dec 12. 🐝" />
+  <meta property="og:description" content="A new nonprofit from Salty Hive CrossFit. The Liftoff Fri, Dec 11. The first annual Thrive Throwdown Sat, Dec 12." />
   <meta property="og:url" content="https://shcf.vercel.app/" />
   <meta property="og:image" content="https://shcf.vercel.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,6 +22,13 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Icon sprite (SVG only, no emoji) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-hex" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.6 21 6.8v10.4l-9 5.2-9-5.2V6.8z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
+  </svg>
   <a class="skip" href="#program">Skip to the program</a>
   <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -38,7 +45,7 @@
       <a href="#impact">Impact</a>
     </nav>
     <a class="btn btn--ghost btn--sm nav__give" href="#give">Give</a>
-    <a class="btn btn--hive btn--sm js-primary-cta" href="#signup">Sign up <span aria-hidden="true">🐝</span></a>
+    <a class="btn btn--hive btn--sm js-primary-cta" href="#signup">Sign up <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
   </header>
 
   <main id="top">
@@ -77,7 +84,7 @@
         </div>
 
         <div class="hero__ctas">
-          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#signup">Sign up for the Throwdown <span aria-hidden="true">🐝</span></a>
+          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#signup">Sign up for the Throwdown <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
           <a class="btn btn--ghost btn--lg magnetic" href="#give">Give 5 for Thrive · $5/mo</a>
         </div>
         <a class="hero__watch" href="#story">
@@ -89,7 +96,7 @@
       <div class="badge" aria-hidden="true">
         <svg viewBox="0 0 200 200" class="badge__ring">
           <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
-          <text><textPath href="#circ">THRIVE THROWDOWN ✦ 12.12 ✦ SALT LAKE CITY ✦ </textPath></text>
+          <text><textPath href="#circ">THRIVE THROWDOWN · 12.12 · SALT LAKE CITY · </textPath></text>
         </svg>
         <svg viewBox="0 0 100 100" class="badge__hex">
           <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" />
@@ -106,14 +113,14 @@
     <div class="tape" aria-hidden="true">
       <div class="tape__band tape__band--hive">
         <div class="tape__track">
-          <span>ThrHIVE</span><b>✦</b><span>Free CrossFit for recovery</span><b>✦</b><span>501(c)(3)</span><b>✦</b><span>Liftoff 12.11</span><b>✦</b><span>Thrive Throwdown 12.12</span><b>✦</b>
-          <span>ThrHIVE</span><b>✦</b><span>Free CrossFit for recovery</span><b>✦</b><span>501(c)(3)</span><b>✦</b><span>Liftoff 12.11</span><b>✦</b><span>Thrive Throwdown 12.12</span><b>✦</b>
+          <span>ThrHIVE</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Free CrossFit for recovery</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>501(c)(3)</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Liftoff 12.11</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Thrive Throwdown 12.12</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
+          <span>ThrHIVE</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Free CrossFit for recovery</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>501(c)(3)</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Liftoff 12.11</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Thrive Throwdown 12.12</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
         </div>
       </div>
       <div class="tape__band tape__band--ink">
         <div class="tape__track tape__track--rev">
-          <span>Something bigger</span><b>🐝</b><span>For the people we don't yet get to serve</span><b>🐝</b><span>You get to be a part of that</span><b>🐝</b>
-          <span>Something bigger</span><b>🐝</b><span>For the people we don't yet get to serve</span><b>🐝</b><span>You get to be a part of that</span><b>🐝</b>
+          <span>Something bigger</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>For the people we don't yet get to serve</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>You get to be a part of that</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
+          <span>Something bigger</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>For the people we don't yet get to serve</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>You get to be a part of that</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
         </div>
       </div>
     </div>
@@ -176,7 +183,7 @@
               <span class="yt__play" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
               </span>
-              <span class="yt__tag" aria-hidden="true">▶ Hear it from Justin · sound on</span>
+              <span class="yt__tag" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Hear it from Justin · sound on</span>
             </button>
           </div>
           <div class="phone__glow" aria-hidden="true"></div>
@@ -293,7 +300,7 @@
             <label class="field"><span>Home gym <i>(optional)</i></span><input name="home_gym" type="text" maxlength="120" /></label>
           </div>
           <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn--hive btn--lg form__submit" type="submit">Put me on the list <span aria-hidden="true">🐝</span></button>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Put me on the list <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></button>
           <p class="form__note" data-form-note role="status"></p>
         </form>
       </div>
@@ -353,7 +360,7 @@
             <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
           </div>
           <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn--hive btn--lg form__submit" type="submit">Lock in my pledge <span aria-hidden="true">🐝</span></button>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Lock in my pledge <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></button>
           <p class="form__note" data-form-note role="status"></p>
         </form>
       </div>
@@ -567,11 +574,11 @@
             into the Hive. Pick one. Or all three.
           </p>
           <div class="join__ctas reveal" id="join-ctas">
-            <a class="btn btn--hive btn--lg js-primary-cta" href="#signup">Sign up <span aria-hidden="true">🐝</span></a>
+            <a class="btn btn--hive btn--lg js-primary-cta" href="#signup">Sign up <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
             <a class="btn btn--hive btn--lg" href="#give">Join the Swarm</a>
-            <button class="btn btn--ghost btn--lg" id="cta-cal" type="button">Save Dec 11–12 <span aria-hidden="true">📅</span></button>
+            <button class="btn btn--ghost btn--lg" id="cta-cal" type="button">Save Dec 11–12 <svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></button>
             <button class="btn btn--ghost btn--lg" id="share-btn" type="button">Share this page <span aria-hidden="true">↗</span></button>
-            <a class="btn btn--ghost btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20ThrHIVE!%20%F0%9F%90%9D">Text the Hive <span aria-hidden="true">💬</span></a>
+            <a class="btn btn--ghost btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20ThrHIVE!">Text the Hive <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></a>
           </div>
         </div>
 
@@ -627,7 +634,7 @@
     <p class="footer__fine">
       ThrHIVE is a 501(c)(3) nonprofit program, separate from and supported by Salty Hive CrossFit.
       Photos courtesy of Salty Hive CrossFit &amp; <a href="https://www.instagram.com/bhofferphoto/" target="_blank" rel="noopener">@bhofferphoto</a>.
-      © <span id="year">2026</span> · 4050 S Howick St, Salt Lake City, UT · Once a part of the Hive, always a part of the Hive. 🐝
+      © <span id="year">2026</span> · 4050 S Howick St, Salt Lake City, UT · Once a part of the Hive, always a part of the Hive.
     </p>
   </footer>
 

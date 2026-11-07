@@ -150,7 +150,7 @@
     const tick = () => {
       const diff = target - Date.now();
       if (diff <= 0) {
-        cdLabel.textContent = "Throwdown day is here. Let's go! 🐝";
+        cdLabel.textContent = "Throwdown day is here. Let's go!";
         Object.values(units).forEach((u) => (u.textContent = "00"));
         return;
       }
@@ -227,7 +227,7 @@
       a.href = URL.createObjectURL(new Blob([lines.join("\r\n")], { type: "text/calendar" }));
       a.download = "thrhive-weekend.ics";
       document.body.appendChild(a); a.click(); a.remove();
-      toast("Saved. See you Dec 11–12 🐝");
+      toast("Saved. See you Dec 11–12");
     });
   }
 
@@ -267,13 +267,13 @@
     shareBtn.addEventListener("click", async () => {
       const data = {
         title: "ThrHIVE · Thrive Throwdown Dec 12",
-        text: "Salty Hive just launched ThrHIVE: free CrossFit for local recovery programs. Liftoff Dec 11, Thrive Throwdown Dec 12. 🐝",
+        text: "Salty Hive just launched ThrHIVE: free CrossFit for local recovery programs. Liftoff Dec 11, Thrive Throwdown Dec 12.",
         url: window.location.href.split("#")[0],
       };
       try {
         if (navigator.share) { await navigator.share(data); return; }
         await navigator.clipboard.writeText(data.url);
-        toast("Link copied. Send it! 🐝");
+        toast("Link copied. Send it!");
       } catch (e) {
         if (e && e.name === "AbortError") return;
         toast(data.url);
@@ -432,8 +432,9 @@
     if (reduceMotion || !confetti) return;
     for (let i = 0; i < n; i++) {
       const el = document.createElement("i");
-      if (Math.random() < 0.35) { el.textContent = "🐝"; el.style.fontSize = `${16 + Math.random() * 14}px`; }
-      else el.className = "hex";
+      el.className = Math.random() < 0.35 ? "hex hex--ring" : "hex";
+      const sz = 10 + Math.random() * 12;
+      el.style.width = `${sz}px`; el.style.height = `${sz * 1.15}px`;
       confetti.appendChild(el);
       const ang = Math.random() * Math.PI * 2;
       const speed = 4 + Math.random() * 9;
@@ -455,7 +456,7 @@
 
   const hypeBtn = $("#hype-btn");
   if (hypeBtn) {
-    const levels = [[0, "Cold start"], [3, "Warming up"], [10, "Getting salty"], [20, "Swarming 🐝"], [35, "Hive mind"], [50, "FULL SEND"]];
+    const levels = [[0, "Cold start"], [3, "Warming up"], [10, "Getting salty"], [20, "Swarming"], [35, "Hive mind"], [50, "FULL SEND"]];
     const fill = $("#hype-fill"), lvl = $("#hype-level"), cnt = $("#hype-count");
     let taps = Number(store.get("thrhive-hype") || 0) || 0;
     const render = () => {
@@ -683,7 +684,7 @@
 
   wireForm($("#signup-form"), {
     table: "signups",
-    subject: "Thrive Throwdown: put me on the early list 🐝",
+    subject: "Thrive Throwdown: put me on the early list",
     build: (fd) => ({
       name: clean(fd.get("name"), 120),
       email: clean(fd.get("email"), 200),
@@ -700,13 +701,13 @@
     done: (r) => ({
       title: `You're on the list, ${esc(r.name.split(" ")[0])}.`,
       body: "You'll hear first when registration opens. Now go recruit your crew.",
-      toast: "You're on the list 🐝",
+      toast: "You're on the list",
     }),
   });
 
   wireForm($("#pledge-form"), {
     table: "pledges",
-    subject: "ThrHIVE pledge 🐝",
+    subject: "ThrHIVE pledge",
     build: (fd) => ({
       kind: "individual",
       name: clean(fd.get("name"), 120),
@@ -724,7 +725,7 @@
     done: (r) => ({
       title: r.frequency === "once" ? "Thank you for showing up." : "Welcome to the Swarm.",
       body: `Your ${money(r.amount)}${r.frequency === "once" ? "" : r.frequency === "monthly" ? "/month" : "/year"} pledge is locked in. We'll email your secure giving link the moment it's live.`,
-      toast: "Pledge locked in 🐝",
+      toast: "Pledge locked in",
     }),
   });
 
@@ -748,7 +749,7 @@
     done: () => ({
       title: "Let's build something.",
       body: "Thanks for reaching out. Justin will be in touch soon to talk through it.",
-      toast: "Message sent 🐝",
+      toast: "Message sent",
     }),
   });
 
