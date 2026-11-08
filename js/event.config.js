@@ -1,95 +1,71 @@
 /* ==========================================================================
    ThrHIVE: SITE DETAILS
-   --------------------------------------------------------------------------
-   This is the ONLY file you need to touch to update the site.
-
-   - Any game-plan card with `value: null` shows as "Coming soon".
-     Fill it in and the card lights up.
-   - Paste donation links into `giving.links` and the Give buttons go
-     straight to checkout. Until then they collect pledges.
-   - Update `programs[].raised` as money comes in and the honeycomb
-     tracker fills.
+   This is the only file you need to edit to update the site.
    ========================================================================== */
 
 window.THRHIVE = {
   /* --- Countdown --------------------------------------------------------- */
-  // Thrive Throwdown day. When the start time is announced, change this to
-  // e.g. "2026-12-12T08:00:00-07:00" and set timeTBA to false.
+  // When the start time is announced, change to e.g. "2026-12-12T08:00:00-07:00".
   countdownTo: "2026-12-12T00:00:00-07:00",
-  timeTBA: true,
   countdownLabel: "Thrive Throwdown · Sat, Dec 12",
 
-  /* --- Calendar invite (the "Save Dec 11–12" button) --------------------- */
-  // Dates only = all-day events. Add start/end ISO times once they're known,
-  // e.g. { title: "...", start: "2026-12-12T08:00:00-07:00", end: "2026-12-12T15:00:00-07:00" }
+  /* --- "Save the date" calendar file ------------------------------------- */
+  // Dates only = all-day events. Add start/end ISO times once they're known.
   calendar: [
     { title: "The Liftoff @ Salty Hive CrossFit", date: "2026-12-11" },
     { title: "Thrive Throwdown @ Salty Hive CrossFit", date: "2026-12-12" },
   ],
 
-  /* --- Throwdown game plan cards ---------------------------------------------- */
-  // value: big text, detail: small text. value: null = "Coming soon" + teaser.
-  intel: [
-    { label: "When", value: "Dec 11–12", detail: "Liftoff Friday · Throwdown Saturday" },
-    { label: "Where", value: "Salty Hive CrossFit", detail: "4050 S Howick St · Salt Lake City" },
-    { label: "The Cause", value: "Funding ThrHIVE", detail: "Free CrossFit for local recovery programs" },
-    { label: "Start Time", value: null, teaser: "Times announced soon." },
-    { label: "The Format", value: null, teaser: "Workouts revealed soon." },
-    { label: "Divisions", value: null, teaser: "Divisions announced soon." },
-    { label: "Entry", value: null, teaser: "Entry details coming soon." },
-    { label: "Registration", value: null, teaser: "Get on the early list below." },
+  /* --- Throwdown details ------------------------------------------------- */
+  // value: null shows "Coming soon" with the teaser underneath.
+  details: [
+    { label: "When", value: "Dec 11–12", detail: "Liftoff Fri · Throwdown Sat" },
+    { label: "Where", value: "Salty Hive CrossFit", detail: "4050 S Howick St, SLC" },
+    { label: "Format", value: null, teaser: "Workouts and divisions soon." },
+    { label: "Entry", value: null, teaser: "Pricing announced soon." },
   ],
 
-  // Official Throwdown registration link (Competition Corner, Zeffy, etc.).
-  // When set, a big REGISTER button appears above the early-list form.
+  // Official registration link. When set, a REGISTER button appears.
   registerUrl: null,
 
   /* --- Giving ------------------------------------------------------------ */
   giving: {
-    programCost: 4000, // what one 12-week ThrHIVE program costs
+    programCost: 4000, // one 12-week program
     programWeeks: 12,
 
-    // Checkout page for each way to give (Zeffy, Givebutter, Donorbox,
-    // Stripe Payment Links...). Leave null and the button collects a pledge
-    // (name + email) so you can follow up when online giving is live.
+    // Checkout pages from your giving platform. Leave null to collect pledges.
     links: { monthly: null, yearly: null, once: null },
-    // If your checkout accepts the amount in its URL (e.g. ?amount=25),
-    // put the parameter name here and the chosen amount carries over.
+    // If checkout reads the amount from the URL (e.g. ?amount=25), name it here.
     amountParam: null,
 
-    // The Swarm: recurring tiers. `amount` is per month; yearly = 12x.
+    // The Swarm: monthly amounts (yearly = 12x).
     swarm: [
-      { name: "5 for Thrive", amount: 5, line: "Where every swarm starts." },
-      { name: "Worker Bee", amount: 25, line: "The steady engine of the Hive." },
-      { name: "Honey Maker", amount: 50, line: "Turns sweat into something sweet." },
-      { name: "Hive Keeper", amount: 100, line: "Keeps the whole thing running." },
+      { name: "5 for Thrive", amount: 5 },
+      { name: "Worker Bee", amount: 25 },
+      { name: "Honey Maker", amount: 50 },
+      { name: "Hive Keeper", amount: 100 },
     ],
-
     // One-time gifts.
     once: [
-      { name: "First Flight", amount: 25, line: "One gift, carried a long way." },
-      { name: "Comb Builder", amount: 100, line: "Builds what the Hive stands on." },
-      { name: "Fund a Week", amount: 333, line: "One full week of a program." },
-      { name: "Fund a Month", amount: 1333, line: "Four weeks, start to finish." },
+      { name: "First Flight", amount: 25 },
+      { name: "Comb Builder", amount: 100 },
+      { name: "Fund a Week", amount: 333 },
+      { name: "Fund a Month", amount: 1333 },
     ],
   },
 
-  /* --- Program tracker (the honeycomb meter) ----------------------------- */
-  // One entry per 12-week program. Update `raised` as donations come in.
-  programs: [
-    { name: "Program 01", goal: 4000, raised: null, status: "Funding now" },
-  ],
+  /* --- Program tracker --------------------------------------------------- */
+  // Update `raised` as donations come in.
+  programs: [{ name: "Program 01", goal: 4000, raised: null }],
 
   /* --- Where form submissions go ----------------------------------------- */
-  // Supabase project URL + publishable key (see supabase/schema.sql).
-  // Leave null and forms open a pre-filled email to the gym instead.
+  // Supabase URL + publishable key (see supabase/schema.sql).
+  // Leave null and forms open a pre-filled email instead.
   backend: { supabaseUrl: null, supabaseKey: null },
 
-  /* --- Gym info (already filled in) ------------------------------------- */
-  announcedOn: "2026-11-05",
+  /* --- Contact ----------------------------------------------------------- */
   youtubeId: "nTL6EOq-iPo",
-  instagram: "https://www.instagram.com/saltyhivecrossfit/",
-  phone: "8014490478",
   email: "justin@saltyhivecrossfit.com",
+  phone: "8014490478",
   address: "4050 S Howick St, Salt Lake City, UT 84107",
 };

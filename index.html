@@ -3,49 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>ThrHIVE | Free CrossFit for Recovery · Thrive Throwdown Dec 12</title>
-  <meta name="description" content="ThrHIVE is Salty Hive CrossFit's new 501(c)(3) nonprofit bringing free CrossFit training to drug and alcohol recovery programs in Salt Lake. It kicks off with the first annual Thrive Throwdown, Saturday, Dec 12." />
+  <title>ThrHIVE | CrossFit for the communities that need it most</title>
+  <meta name="description" content="ThrHIVE is a 501(c)(3) nonprofit connecting CrossFit gyms with underserved communities and funding free 12-week programs. Thrive Throwdown: Sat, Dec 12." />
   <meta name="theme-color" content="#0a0a09" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ThrHIVE · Free CrossFit for recovery, powered by the Hive" />
-  <meta property="og:description" content="A new nonprofit from Salty Hive CrossFit. The Liftoff Fri, Dec 11. The first annual Thrive Throwdown Sat, Dec 12." />
   <meta property="og:url" content="https://shcf.vercel.app/" />
+  <meta property="og:title" content="ThrHIVE · CrossFit for the communities that need it most" />
+  <meta property="og:description" content="A 501(c)(3) nonprofit. The Liftoff Fri, Dec 11. The first annual Thrive Throwdown Sat, Dec 12." />
   <meta property="og:image" content="https://shcf.vercel.app/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:ital,wght@0,400;0,500;0,700;0,800;0,900;1,800&family=Kaushan+Script&family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:wght@400;500;700;800&family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="assets/img/hero-overhead.webp" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Icon sprite (SVG only, no emoji) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-hex" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.6 21 6.8v10.4l-9 5.2-9-5.2V6.8z"/></symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
     <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
   </svg>
-  <a class="skip" href="#program">Skip to the program</a>
+
+  <a class="skip" href="#about">Skip to content</a>
   <div class="progress" aria-hidden="true"><span></span></div>
 
   <!-- ============================== NAV ============================== -->
   <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="Salty Hive CrossFit, back to top">
-      <img src="assets/img/shcf-logo-white.png" alt="Salty Hive CrossFit" width="576" height="234" />
-    </a>
+    <a class="nav__brand" href="#top" aria-label="ThrHIVE, back to top">Thr<b>HIVE</b></a>
     <nav class="nav__links" aria-label="Sections">
-      <a href="#program">The Program</a>
+      <a href="#about">About</a>
       <a href="#throwdown">Throwdown</a>
-      <a href="#give">The Swarm</a>
-      <a href="#apiary">Partners</a>
-      <a href="#impact">Impact</a>
+      <a href="#give">Give</a>
     </nav>
     <a class="btn btn--ghost btn--sm nav__give" href="#give">Give</a>
-    <a class="btn btn--hive btn--sm js-primary-cta" href="#signup">Sign up <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
+    <a class="btn btn--hive btn--sm" href="#signup">Sign up</a>
   </header>
 
   <main id="top">
@@ -58,19 +53,13 @@
       <div class="hero__grain" aria-hidden="true"></div>
 
       <div class="hero__inner">
-        <p class="kicker"><span class="live-dot" aria-hidden="true"></span> Salty Hive CrossFit presents · a 501(c)(3) nonprofit</p>
-
+        <p class="kicker"><span class="live-dot" aria-hidden="true"></span> 501(c)(3) nonprofit · Salt Lake City</p>
         <h1 class="wordmark" id="hero-title">
-          <span class="wordmark__salty" aria-hidden="true">salty</span>
-          <span class="wordmark__row">
-            <span class="wordmark__thr">Thr</span><span class="wordmark__hive">HIVE</span>
-          </span>
+          <span class="wordmark__thr">Thr</span><span class="wordmark__hive">HIVE</span>
         </h1>
-
         <p class="hero__lede">
-          <strong>Free CrossFit for people in recovery.</strong> ThrHIVE is a brand-new nonprofit bringing free
-          training to drug and alcohol recovery programs right here in Salt Lake. And we're kicking it off the only way
-          the Hive knows how: <em>with a throwdown.</em>
+          <strong>CrossFit for the communities that need it most.</strong>
+          We connect local gyms with underserved communities and fund free 12-week programs.
         </p>
 
         <div class="countdown" id="countdown" data-state="scramble">
@@ -84,13 +73,9 @@
         </div>
 
         <div class="hero__ctas">
-          <a class="btn btn--hive btn--lg js-primary-cta magnetic" href="#signup">Sign up for the Throwdown <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="#give">Give 5 for Thrive · $5/mo</a>
+          <a class="btn btn--hive btn--lg magnetic" href="#signup">Sign up for the Throwdown</a>
+          <a class="btn btn--ghost btn--lg magnetic" href="#give">Give $5/mo</a>
         </div>
-        <a class="hero__watch" href="#story">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-          Watch the announcement
-        </a>
       </div>
 
       <div class="badge" aria-hidden="true">
@@ -103,193 +88,99 @@
           <text x="50" y="60" text-anchor="middle">12.12</text>
         </svg>
       </div>
-
-      <a class="scroll-cue" href="#program" aria-label="Scroll to the program">
-        <span>Scroll</span><i></i>
-      </a>
     </section>
 
     <!-- ============================== TAPE ============================== -->
     <div class="tape" aria-hidden="true">
       <div class="tape__band tape__band--hive">
         <div class="tape__track">
-          <span>ThrHIVE</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Free CrossFit for recovery</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>501(c)(3)</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Liftoff 12.11</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Thrive Throwdown 12.12</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
-          <span>ThrHIVE</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Free CrossFit for recovery</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>501(c)(3)</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Liftoff 12.11</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>Thrive Throwdown 12.12</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
-        </div>
-      </div>
-      <div class="tape__band tape__band--ink">
-        <div class="tape__track tape__track--rev">
-          <span>Something bigger</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>For the people we don't yet get to serve</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>You get to be a part of that</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
-          <span>Something bigger</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>For the people we don't yet get to serve</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b><span>You get to be a part of that</span><b><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></b>
+          <span>Thrive Throwdown · Sat 12.12</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>The Liftoff · Fri 12.11</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>Sign up</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>Give</span><b><svg class="ico"><use href="#i-hex"/></svg></b>
+          <span>Thrive Throwdown · Sat 12.12</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>The Liftoff · Fri 12.11</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>Sign up</span><b><svg class="ico"><use href="#i-hex"/></svg></b><span>Give</span><b><svg class="ico"><use href="#i-hex"/></svg></b>
         </div>
       </div>
     </div>
 
-    <!-- ============================== PROGRAM ============================== -->
-    <section class="section program" id="program" aria-labelledby="program-title">
-      <div class="section__head">
-        <p class="eyebrow reveal">The program</p>
-        <h2 class="display reveal" id="program-title">Free CrossFit. <span class="hl">Real community.</span> A shot to thrive.</h2>
-        <p class="lede reveal">
-          ThrHIVE is its own nonprofit, separate from the gym, built to do one thing: open the doors of the Hive to
-          people working through recovery. No membership. No cost. Just coaching, community, and a crew that shows up.
-        </p>
-      </div>
-
-      <div class="equation" aria-label="Thrive plus Hive equals ThrHIVE">
-        <div class="eq reveal">
-          <span class="eq__op" aria-hidden="true"></span>
-          <span class="eq__word eq__word--outline">Thrive</span>
-          <p class="eq__def"><em>thrive</em> /THrīv/ <i>verb</i>: to grow. To flourish. To get after it.</p>
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about__grid">
+        <div class="about__copy">
+          <p class="eyebrow reveal">What we do</p>
+          <h2 class="display reveal" id="about-title">Strong gyms. <span class="hl">Stronger communities.</span></h2>
+          <p class="lede reveal">
+            ThrHIVE partners local programs with CrossFit gyms, and covers the cost so it's free for the people who need it.
+          </p>
+          <ol class="steps reveal">
+            <li><span>01</span><div><h3>Partner</h3><p>We team up with local programs serving underserved communities.</p></div></li>
+            <li><span>02</span><div><h3>Connect</h3><p>We match them with CrossFit gyms ready to coach.</p></div></li>
+            <li><span>03</span><div><h3>Fund</h3><p>We pay for a 12-week program, so it's free to every participant.</p></div></li>
+          </ol>
         </div>
-        <div class="eq reveal">
-          <span class="eq__op" aria-hidden="true">+</span>
-          <span class="eq__word eq__word--hive">Hive</span>
-          <p class="eq__def"><em>hive</em> /hīv/ <i>noun</i>: a teeming multitude. A nod to Utah, the Beehive State.</p>
-        </div>
-        <div class="eq eq--total reveal">
-          <span class="eq__op" aria-hidden="true">=</span>
-          <span class="eq__word eq__word--total">Thr<b>HIVE</b></span>
-          <p class="eq__def">Free training, a real community, and a whole Hive in your corner.</p>
-        </div>
-      </div>
 
-      <div class="pillars">
-        <article class="pillar reveal">
-          <span class="pillar__n">01</span>
-          <h3>Free training</h3>
-          <p>Free CrossFit training for local drug and alcohol recovery programs in Salt Lake. That's the starting point, and we'll see where this thing goes.</p>
-        </article>
-        <article class="pillar reveal" style="--d:.08s">
-          <span class="pillar__n">02</span>
-          <h3>Part of the Hive</h3>
-          <p>It's not just workouts. It's bringing people in recovery through our doors as a real part of the Salty Hive community.</p>
-        </article>
-        <article class="pillar reveal" style="--d:.16s">
-          <span class="pillar__n">03</span>
-          <h3>A true nonprofit</h3>
-          <p>ThrHIVE is a registered 501(c)(3), so every donation that fuels it can be a tax write-off for the donor.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============================== STORY + VIDEO ============================== -->
-    <section class="section story" id="story" aria-labelledby="story-title">
-      <div class="story__media">
-        <div class="announce__phone reveal">
+        <figure class="founder reveal">
           <div class="phone">
             <button class="yt" id="yt" type="button" aria-label="Play the ThrHIVE announcement video">
               <img src="assets/img/announcement-poster.webp" alt="" width="404" height="720" loading="lazy" />
-              <span class="yt__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              </span>
-              <span class="yt__tag" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Hear it from Justin · sound on</span>
+              <span class="yt__play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg></span>
             </button>
           </div>
-          <div class="phone__glow" aria-hidden="true"></div>
-        </div>
+          <figcaption>
+            <b>Justin Zizumbo, founder</b>
+            Former social worker and owner of Salty Hive CrossFit, our first partner gym.
+          </figcaption>
+        </figure>
       </div>
 
-      <div class="story__copy">
-        <p class="eyebrow reveal">Why ThrHIVE exists</p>
-        <h2 class="display reveal" id="story-title">From the clinic to the gym floor.</h2>
-        <p class="lede reveal">
-          Before he ever owned a gym, <strong>Justin Zizumbo</strong> was a social worker. His last job: clinical
-          director of a drug and alcohol outpatient program, one that built health, fitness coaching and CrossFit right
-          into recovery.
-        </p>
-        <blockquote class="pull reveal">
-          <p>“During that time I really had the opportunity to realize what my passion was, and that was helping people inside of a gym.”</p>
-        </blockquote>
-        <p class="lede reveal">
-          He's been doing this full time since 2019, and ever since, he's wanted to bridge the gap between what happens
-          at Salty Hive and what he's always wanted to do: <em>help an underserved population.</em> ThrHIVE is that bridge.
-        </p>
-
-        <div class="row reveal">
-          <a class="btn btn--ghost" href="https://youtube.com/shorts/nTL6EOq-iPo" target="_blank" rel="noopener">Watch on YouTube <span aria-hidden="true">↗</span></a>
-        </div>
+      <div class="photos">
+        <img class="reveal" src="assets/img/community-helping-hand.webp" alt="A gym member reaching down to help a teammate up off the floor" loading="lazy" width="1100" height="1650" />
+        <img class="reveal" src="assets/img/celebrate.webp" alt="Two athletes hugging and celebrating on a turf field" loading="lazy" width="1200" height="1200" />
+        <img class="reveal" src="assets/img/community-group.webp" alt="A group of gym members gathered for a photo" loading="lazy" width="1000" height="1773" />
+        <img class="reveal" src="assets/img/community-high-five.webp" alt="An athlete laughing mid high-five with a coach" loading="lazy" width="1100" height="1650" />
       </div>
     </section>
 
     <!-- ============================== STATEMENT ============================== -->
-    <section class="statement" aria-label="Something bigger">
-      <div class="statement__bg" aria-hidden="true"><img src="assets/img/wall.webp" alt="" loading="lazy" width="1400" height="1050" /></div>
-      <p class="statement__text reveal">
-        Something bigger, for the people we <mark>don't yet get to serve</mark>.
-      </p>
-      <p class="statement__sig reveal"><span class="script">and</span> you get to be a part of that.</p>
+    <section class="statement" aria-label="Why ThrHIVE exists">
+      <p class="statement__text reveal">Something bigger, for the people we <mark>don't yet get to serve.</mark></p>
+      <p class="statement__sig reveal">Justin Zizumbo, founder</p>
     </section>
 
     <!-- ============================== THROWDOWN ============================== -->
     <section class="section throwdown" id="throwdown" aria-labelledby="throwdown-title">
       <div class="section__head">
-        <p class="eyebrow reveal">The kickoff fundraiser</p>
-        <h2 class="display reveal" id="throwdown-title">The first annual <span class="hl">Thrive Throwdown</span></h2>
-        <p class="lede reveal">
-          To kickstart fundraising for ThrHIVE, we're teaming the Throwdown up with the Liftoff for one massive weekend.
-          Phase one Friday. Throwdown Saturday. Full details are dropping soon.
-        </p>
+        <p class="eyebrow reveal">Our first fundraiser</p>
+        <h2 class="display reveal" id="throwdown-title">Thrive <span class="hl">Throwdown</span></h2>
+        <p class="lede reveal">Hosted by Salty Hive CrossFit. Every entry helps fund ThrHIVE programs.</p>
       </div>
 
       <div class="tickets">
         <article class="ticket reveal">
           <div class="ticket__bg" aria-hidden="true"><img src="assets/img/liftoff-bench.webp" alt="" loading="lazy" width="900" height="1350" /></div>
-          <p class="ticket__phase">Phase 01</p>
           <p class="ticket__date"><span>Fri</span>12.11</p>
           <h3 class="ticket__title">The Liftoff</h3>
-          <p class="ticket__note">The weekend kicks off.</p>
         </article>
-        <article class="ticket ticket--hive reveal" style="--d:.1s">
+        <article class="ticket ticket--hive reveal">
           <div class="ticket__bg" aria-hidden="true"><img src="assets/img/trail-boxjump.webp" alt="" loading="lazy" width="1600" height="1066" /></div>
-          <p class="ticket__phase">Phase 02</p>
           <p class="ticket__date"><span>Sat</span>12.12</p>
           <h3 class="ticket__title">Thrive Throwdown</h3>
-          <p class="ticket__note">The first annual. Come back and throw down.</p>
         </article>
       </div>
 
-      <div class="section__subhead">
-        <h3 class="subhead reveal">The game plan</h3>
-        <p class="lede reveal">Here's what's locked in so far. The rest gets announced right here as it's set, so keep checking back.</p>
-      </div>
-      <div class="intel__grid" id="intel-grid">
-        <!-- Cards are rendered from js/event.config.js -->
-      </div>
-    </section>
+      <div class="details" id="details"><!-- rendered from js/event.config.js --></div>
 
-    <!-- ============================== SIGN UP ============================== -->
-    <section class="section signup" id="signup" aria-labelledby="signup-title">
-      <div class="signup__grid">
+      <div class="signup" id="signup">
         <div class="signup__copy">
-          <p class="eyebrow reveal">Thrive Throwdown · Sat, Dec 12</p>
-          <h2 class="display reveal" id="signup-title">Claim your <span class="hl">spot.</span></h2>
-          <p class="lede reveal">
-            Full registration drops soon. Get on the early list and you'll be the first to know when spots open,
-            plus the format, divisions and heat times. Coming to compete, volunteer, cheer or sponsor? We want you there.
-          </p>
-          <a class="btn btn--hive btn--lg signup__register" id="cta-register" href="#" target="_blank" rel="noopener" hidden>Register now <span aria-hidden="true">→</span></a>
-          <ul class="ticks reveal">
-            <li>First dibs when registration opens</li>
-            <li>Format, divisions &amp; heat times before anyone else</li>
-            <li>Every entry fuels free CrossFit for people in recovery</li>
-          </ul>
+          <h3 class="subhead reveal">Get on the list</h3>
+          <p class="lede reveal">Be first to know when registration opens.</p>
+          <a class="btn btn--hive btn--lg" id="cta-register" href="#" target="_blank" rel="noopener" hidden>Register now <span aria-hidden="true">→</span></a>
+          <button class="btn btn--ghost reveal" id="cta-cal" type="button"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg> Save Dec 11–12</button>
         </div>
 
         <form class="form reveal" id="signup-form" novalidate>
-          <p class="form__title">Get on the early list</p>
           <fieldset class="chips">
-            <legend>I'm coming to</legend>
+            <legend>I want to</legend>
             <label><input type="checkbox" name="roles" value="compete" checked /><span>Compete</span></label>
             <label><input type="checkbox" name="roles" value="volunteer" /><span>Volunteer</span></label>
             <label><input type="checkbox" name="roles" value="cheer" /><span>Cheer</span></label>
-            <label><input type="checkbox" name="roles" value="sponsor" /><span>Sponsor</span></label>
-          </fieldset>
-          <fieldset class="chips">
-            <legend>Which days?</legend>
-            <label><input type="radio" name="days" value="both" checked /><span>Both</span></label>
-            <label><input type="radio" name="days" value="liftoff" /><span>Liftoff · Fri</span></label>
-            <label><input type="radio" name="days" value="throwdown" /><span>Throwdown · Sat</span></label>
           </fieldset>
           <div class="form__row">
             <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
@@ -297,121 +188,85 @@
           </div>
           <div class="form__row">
             <label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
-            <label class="field"><span>Home gym <i>(optional)</i></span><input name="home_gym" type="text" maxlength="120" /></label>
+            <label class="field"><span>Gym <i>(optional)</i></span><input name="home_gym" type="text" maxlength="120" /></label>
           </div>
           <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn--hive btn--lg form__submit" type="submit">Put me on the list <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></button>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Sign me up</button>
           <p class="form__note" data-form-note role="status"></p>
         </form>
       </div>
     </section>
 
-    <!-- ============================== GIVE: THE SWARM ============================== -->
+    <!-- ============================== GIVE ============================== -->
     <section class="section give" id="give" aria-labelledby="give-title">
-      <div class="section__head">
-        <p class="eyebrow reveal">Fuel the mission</p>
-        <h2 class="display reveal" id="give-title">Join <span class="hl">the Swarm.</span></h2>
-        <p class="lede reveal">
-          A hive runs on thousands of bees each doing a little, every single day. The Swarm is ThrHIVE's monthly
-          giving community: steady support that keeps programs running all year. $5 a month won't build a program on
-          its own. <strong><span data-calc="membersAt5">67</span> of you will.</strong>
-        </p>
+      <div class="give__head">
+        <div>
+          <p class="eyebrow reveal">Give</p>
+          <h2 class="display reveal" id="give-title">Join <span class="hl">the Swarm.</span></h2>
+          <p class="lede reveal">
+            <span data-money="programCost">$4,000</span> funds one 12-week program. Give monthly, yearly or once.
+          </p>
+        </div>
+        <div class="meter reveal" id="meter" aria-labelledby="meter-title">
+          <p class="meter__label" id="meter-title">Program 01</p>
+          <div class="meter__comb" id="meter-comb" aria-hidden="true"></div>
+          <p class="meter__status" id="meter-status">$4,000 goal</p>
+        </div>
       </div>
 
-      <ul class="math reveal" aria-label="The math behind ThrHIVE">
-        <li><b data-money="programCost">$4,000</b><span>runs one 12-week program</span></li>
-        <li><b data-money="week">$333</b><span>funds one week of it</span></li>
-        <li><b><span data-calc="membersAt5">67</span> × $5</b><span>a month funds a full program every year</span></li>
-      </ul>
-
       <div class="giver reveal" id="giver">
-        <div class="giver__top">
-          <div class="seg" role="radiogroup" aria-label="How often do you want to give?">
-            <button type="button" role="radio" data-freq="monthly" aria-checked="true">Monthly</button>
-            <button type="button" role="radio" data-freq="yearly" aria-checked="false">Yearly</button>
-            <button type="button" role="radio" data-freq="once" aria-checked="false">One time</button>
-          </div>
-          <p class="giver__group" id="giver-group">The Swarm · monthly members</p>
+        <div class="seg" role="radiogroup" aria-label="How often">
+          <button type="button" role="radio" data-freq="monthly" aria-checked="true">Monthly</button>
+          <button type="button" role="radio" data-freq="yearly" aria-checked="false">Yearly</button>
+          <button type="button" role="radio" data-freq="once" aria-checked="false">One time</button>
         </div>
 
         <div class="tiers" id="tiers" role="radiogroup" aria-label="Choose an amount"></div>
 
         <div class="giver__summary">
-          <div class="giver__left">
+          <div>
             <label class="giver__custom">
-              <span>Or choose your own</span>
+              <span>Other amount</span>
               <span class="giver__input"><b>$</b><input id="custom-amount" type="number" inputmode="numeric" min="1" step="1" placeholder="Amount" aria-label="Custom amount in dollars" /></span>
             </label>
-            <p class="giver__you" id="giver-you">You're joining the Swarm as <b>5 for Thrive</b></p>
-            <p class="giver__amount" id="giver-amount">$5<small>/month</small></p>
             <p class="giver__impact" id="giver-impact" aria-live="polite"></p>
           </div>
           <div class="giver__go">
             <a class="btn btn--hive btn--lg" id="giver-btn" href="#give">Give $5 monthly</a>
-            <p class="giver__fine">ThrHIVE is a 501(c)(3). Your gift can be a tax write-off.</p>
+            <p class="giver__fine">Tax-deductible. ThrHIVE is a 501(c)(3).</p>
           </div>
         </div>
 
         <form class="form form--pledge" id="pledge-form" hidden novalidate>
-          <p class="form__title">Online giving opens soon. Lock in your pledge.</p>
-          <p class="form__sub" id="pledge-sub">We'll send your secure giving link the moment it's live. No payment today.</p>
+          <p class="form__title">Online giving opens soon</p>
+          <p class="form__sub" id="pledge-sub">Pledge now and we'll email you a secure link when it's live. No payment today.</p>
           <div class="form__row">
             <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
             <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
           </div>
           <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn--hive btn--lg form__submit" type="submit">Lock in my pledge <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></button>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Pledge</button>
           <p class="form__note" data-form-note role="status"></p>
         </form>
       </div>
-    </section>
 
-    <!-- ============================== APIARY ============================== -->
-    <section class="section apiary" id="apiary" aria-labelledby="apiary-title">
-      <div class="apiary__head">
-        <div>
-          <p class="eyebrow reveal">For businesses &amp; big-hearted donors</p>
-          <h2 class="display reveal" id="apiary-title">The <span class="hl">Apiary.</span></h2>
+      <!-- Partners (The Apiary) -->
+      <div class="partners" id="partners">
+        <div class="partners__head">
+          <h3 class="subhead reveal">The Apiary</h3>
+          <p class="lede reveal">For businesses, gyms and community programs. Sponsor a program and see exactly what it builds.</p>
         </div>
-        <p class="lede reveal">
-          An apiary is where the hives live. Apiary partners are the businesses, families and community leaders who
-          fund entire programs, and then get to see exactly what their gift built.
-        </p>
-      </div>
-
-      <div class="levels">
-        <article class="level reveal">
-          <p class="level__tag">Program Sponsor</p>
-          <p class="level__price" data-money="programCost">$4,000</p>
-          <p class="level__what">Fund one full 12-week program for a local recovery center. Start to finish, it's yours.</p>
-        </article>
-        <article class="level level--feature reveal" style="--d:.08s">
-          <p class="level__tag">Year-Round Sponsor</p>
-          <p class="level__price" data-money="year">$16,000</p>
-          <p class="level__what">Four programs back to back. A full year of ThrHIVE, with your name on all of it.</p>
-        </article>
-        <article class="level reveal" style="--d:.16s">
-          <p class="level__tag">Throwdown Partner</p>
-          <p class="level__price">Let's talk</p>
-          <p class="level__what">Put your brand on the first annual Thrive Throwdown, Dec 12, in front of the whole community.</p>
-        </article>
-      </div>
-
-      <div class="apiary__bottom">
-        <div class="perks reveal">
-          <h3>What Apiary partners get</h3>
-          <ul>
-            <li><b>Program reports.</b> Updates at kickoff, midpoint and graduation for every program you fund.</li>
-            <li><b>Your name on the wall.</b> Recognition on the ThrHIVE wall at Salty Hive and right here on this site.</li>
-            <li><b>A seat at graduation.</b> An invite to the graduation workout when your program finishes.</li>
-            <li><b>Throwdown shout-outs.</b> Recognition at the Thrive Throwdown and across our socials.</li>
-          </ul>
+        <div class="levels">
+          <article class="level reveal"><p class="level__tag">Sponsor a program</p><p class="level__price" data-money="programCost">$4,000</p></article>
+          <article class="level level--feature reveal"><p class="level__tag">Sponsor a year</p><p class="level__price" data-money="year">$16,000</p></article>
+          <article class="level reveal"><p class="level__tag">Host or join</p><p class="level__price level__price--sm">Gyms &amp; programs</p></article>
         </div>
-        <form class="form reveal" id="apiary-form" novalidate>
-          <p class="form__title">Start the conversation</p>
+        <button class="btn btn--hive btn--lg reveal" id="partner-toggle" type="button" aria-expanded="false" aria-controls="apiary-form">Partner with us</button>
+
+        <form class="form" id="apiary-form" hidden novalidate>
           <div class="form__row">
             <label class="field"><span>Name</span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
-            <label class="field"><span>Company <i>(optional)</i></span><input name="company" type="text" autocomplete="organization" maxlength="160" /></label>
+            <label class="field"><span>Organization <i>(optional)</i></span><input name="company" type="text" autocomplete="organization" maxlength="160" /></label>
           </div>
           <div class="form__row">
             <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
@@ -419,202 +274,19 @@
           </div>
           <label class="field"><span>I'm interested in</span>
             <select name="tier">
-              <option value="program">Program Sponsor</option>
-              <option value="year">Year-Round Sponsor</option>
-              <option value="throwdown">Throwdown Partner</option>
+              <option value="program">Sponsoring a program</option>
+              <option value="year">Sponsoring a year</option>
+              <option value="throwdown">Sponsoring the Throwdown</option>
+              <option value="gym">Hosting a program at our gym</option>
+              <option value="community">Bringing a program to our community</option>
               <option value="other">Something else</option>
             </select>
           </label>
-          <label class="field"><span>Anything else? <i>(optional)</i></span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
+          <label class="field"><span>Message <i>(optional)</i></span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
           <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn--hive btn--lg form__submit" type="submit">Become a partner <span aria-hidden="true">→</span></button>
+          <button class="btn btn--hive btn--lg form__submit" type="submit">Send</button>
           <p class="form__note" data-form-note role="status"></p>
         </form>
-      </div>
-    </section>
-
-    <!-- ============================== IMPACT ============================== -->
-    <section class="section impact" id="impact" aria-labelledby="impact-title">
-      <div class="section__head">
-        <p class="eyebrow reveal">Where it goes</p>
-        <h2 class="display reveal" id="impact-title">Follow <span class="hl">every dollar.</span></h2>
-        <p class="lede reveal">
-          Every program has a name, a partner and a finish line. When you give, you don't just get a receipt.
-          You get the story of what your gift built.
-        </p>
-      </div>
-
-      <div class="impact__grid">
-        <div class="meter reveal" id="meter" data-state="locked" aria-labelledby="meter-title">
-          <p class="meter__label"><span id="meter-title">Program 01</span> · <span id="meter-phase">Funding now</span></p>
-          <div class="meter__comb" id="meter-comb" aria-hidden="true"></div>
-          <p class="meter__status" id="meter-status" aria-live="polite">$4,000 goal</p>
-          <p class="meter__sub" id="meter-sub">Every cell is $200. Let's fill the Hive.</p>
-          <a class="btn btn--hive meter__cta" href="#give">Help fill it</a>
-        </div>
-
-        <ol class="journey">
-          <li class="reveal"><span class="journey__when">Funded</span><h3>Fully funded</h3><p>We announce the local recovery program your gift is going to.</p></li>
-          <li class="reveal" style="--d:.06s"><span class="journey__when">Week 1</span><h3>Day one</h3><p>First class at Salty Hive. Coaches, gear, and a whole crew that's been waiting for them.</p></li>
-          <li class="reveal" style="--d:.12s"><span class="journey__when">Week 6</span><h3>Halfway</h3><p>A midpoint update: attendance, firsts, and the milestones that matter.</p></li>
-          <li class="reveal" style="--d:.18s"><span class="journey__when">Week 12</span><h3>Graduation</h3><p>A graduation workout with the Hive cheering, and a final report to everyone who made it happen.</p></li>
-        </ol>
-      </div>
-      <p class="privacy reveal">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/></svg>
-        <span><b>Recovery is personal.</b> Names, photos and stories are only ever shared with a participant's permission.</span>
-      </p>
-    </section>
-
-    <!-- ============================== REEL ============================== -->
-    <section class="reel" id="reel" aria-labelledby="reel-title">
-      <div class="reel__sticky">
-        <div class="reel__head">
-          <p class="eyebrow">The Hive, together</p>
-          <h2 class="display" id="reel-title">This is what <span class="hl">showing up</span> looks like.</h2>
-        </div>
-        <div class="reel__viewport">
-          <div class="reel__track" id="reel-track">
-            <figure class="shot shot--tall"><img src="assets/img/community-helping-hand.webp" alt="A Salty Hive member reaching down to help a teammate up off the floor after a workout" loading="lazy" width="1100" height="1650" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/celebrate.webp" alt="Two Salty Hive athletes hugging and celebrating on a turf field" loading="lazy" width="1200" height="1200" /></figure>
-            <figure class="shot shot--wide"><img src="assets/img/community-coaching.webp" alt="A group of athletes gathered together in the gym between rounds" loading="lazy" width="1500" height="1000" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/community-high-five.webp" alt="An athlete laughing mid high-five with a coach" loading="lazy" width="1100" height="1650" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/community-hug.webp" alt="Two athletes hugging on the gym floor while others look on" loading="lazy" width="1100" height="1650" /></figure>
-            <figure class="shot shot--wide"><img src="assets/img/community-chatting.webp" alt="Members smiling and talking together in the gym" loading="lazy" width="1280" height="853" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/community-laughing.webp" alt="Athletes sitting on the floor laughing together after a workout" loading="lazy" width="1100" height="1647" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/community-group.webp" alt="Salty Hive members gathered for a group photo in the gym" loading="lazy" width="1000" height="1773" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/liftoff-cheer.webp" alt="Two athletes cheering at full volume for a teammate" loading="lazy" width="900" height="1350" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/hug.webp" alt="Two athletes hugging after a workout" loading="lazy" width="1000" height="1500" /></figure>
-            <figure class="shot shot--tall"><img src="assets/img/community-partner.webp" alt="Two athletes working through a partner workout together on turf" loading="lazy" width="1100" height="1650" /></figure>
-            <figure class="shot shot--end">
-              <p>Your turn</p>
-              <a href="#signup">Show up Dec 12 <span aria-hidden="true">→</span></a>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== VALUES ============================== -->
-    <section class="section values" aria-labelledby="values-title">
-      <div class="section__head">
-        <p class="eyebrow reveal">The community they're joining</p>
-        <h2 class="display reveal" id="values-title" data-scramble>The Hive way</h2>
-        <p class="lede reveal">
-          ThrHIVE opens the door to the same Hive our members love: a community for <strong>ANYone</strong> willing to
-          consistently work hard, respect those around them, and hold themselves accountable.
-        </p>
-      </div>
-      <div class="values__grid">
-        <article class="value reveal">
-          <span class="value__n">01</span>
-          <h3>Community</h3>
-          <p>We cheer for, challenge, and support each other. Every member is known, and no one goes through this journey alone.</p>
-        </article>
-        <article class="value reveal" style="--d:.08s">
-          <span class="value__n">02</span>
-          <h3>Hard Work</h3>
-          <p>It's about attitude and effort, not results. Every workout gets scaled so everyone, beginner or seasoned athlete, feels challenged and motivated.</p>
-        </article>
-        <article class="value reveal" style="--d:.16s">
-          <span class="value__n">03</span>
-          <h3>Accountability</h3>
-          <p>We get to know your motivations and goals, then hold you to consistency, good movement, and a routine that lasts.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============================== VOICES ============================== -->
-    <section class="voices" aria-labelledby="voices-title">
-      <div class="voices__bg" aria-hidden="true"><img src="assets/img/crew-summit-camp.webp" alt="" loading="lazy" width="1600" height="1066" /></div>
-      <div class="voices__inner">
-        <p class="eyebrow">Straight from the Hive</p>
-        <h2 class="visually-hidden" id="voices-title">What members say</h2>
-        <div class="quotes" id="quotes" aria-live="polite">
-          <blockquote class="quote is-active">
-            <p>“This incredible gym goes beyond just promoting a healthy lifestyle; it truly fosters a sense of community and family. Every time I step through the doors, I feel welcomed and supported.”</p>
-            <footer>Eleonora Nedobukh</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>“SHCF is a safe space with no judgment for success or defeat and where both are celebrated. There are always so many willing to encourage you to be and do better.”</p>
-            <footer>Jenn B.</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>“Everyone loves their gym but this one is different. The sense of community and belonging set Salty Hive apart from other boxes I've been to.”</p>
-            <footer>Thomas C.</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>“This place is so much more than a place to workout. Here you'll find great friends and a CrossFit family, while breaking a sweat.”</p>
-            <footer>Sabrina M.</footer>
-          </blockquote>
-        </div>
-        <div class="quotes__dots" id="quote-dots" role="tablist" aria-label="Choose a quote"></div>
-      </div>
-    </section>
-
-    <!-- ============================== CREW ============================== -->
-    <div class="crew" aria-label="The Salty Hive coaching crew">
-      <p class="crew__label">Built by the crew</p>
-      <div class="crew__viewport">
-        <ul class="crew__track">
-          <li>Justin Zizumbo <i>CF-L3</i></li><li>Olivia Allen <i>CF-L3</i></li><li>Samantha West <i>CF-L3</i></li><li>Trish Zizumbo <i>CF-L2</i></li><li>Erica Beck <i>CF-L2</i></li><li>Claressa Ullmayer <i>CF-L2</i></li><li>Garrett Barna <i>CF-L2</i></li><li>Megan Carroll <i>CF-L2</i></li><li>Brett Hoffer <i>CF-L1</i></li><li>Erin Reynolds <i>CF-L1</i></li>
-          <li aria-hidden="true">Justin Zizumbo <i>CF-L3</i></li><li aria-hidden="true">Olivia Allen <i>CF-L3</i></li><li aria-hidden="true">Samantha West <i>CF-L3</i></li><li aria-hidden="true">Trish Zizumbo <i>CF-L2</i></li><li aria-hidden="true">Erica Beck <i>CF-L2</i></li><li aria-hidden="true">Claressa Ullmayer <i>CF-L2</i></li><li aria-hidden="true">Garrett Barna <i>CF-L2</i></li><li aria-hidden="true">Megan Carroll <i>CF-L2</i></li><li aria-hidden="true">Brett Hoffer <i>CF-L1</i></li><li aria-hidden="true">Erin Reynolds <i>CF-L1</i></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ============================== JOIN ============================== -->
-    <section class="section join" id="join" aria-labelledby="join-title">
-      <div class="join__card">
-        <div class="join__copy">
-          <p class="eyebrow reveal">Lock it in</p>
-          <h2 class="display reveal" id="join-title" data-scramble>Sign up. Give. Show up.</h2>
-          <p class="lede reveal">
-            Every sign-up packs the house. Every Swarm member keeps a program running. Every share brings someone new
-            into the Hive. Pick one. Or all three.
-          </p>
-          <div class="join__ctas reveal" id="join-ctas">
-            <a class="btn btn--hive btn--lg js-primary-cta" href="#signup">Sign up <svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg></a>
-            <a class="btn btn--hive btn--lg" href="#give">Join the Swarm</a>
-            <button class="btn btn--ghost btn--lg" id="cta-cal" type="button">Save Dec 11–12 <svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></button>
-            <button class="btn btn--ghost btn--lg" id="share-btn" type="button">Share this page <span aria-hidden="true">↗</span></button>
-            <a class="btn btn--ghost btn--lg" id="cta-text" href="sms:+18014490478?&amp;body=I%27m%20in%20for%20ThrHIVE!">Text the Hive <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></a>
-          </div>
-        </div>
-
-        <div class="hype reveal" aria-labelledby="hype-title">
-          <h3 class="hype__title" id="hype-title">How hyped are you?</h3>
-          <button class="hype__btn" id="hype-btn" type="button" aria-describedby="hype-level">
-            <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 90,27 90,73 50,96 10,73 10,27" /></svg>
-            <span>Tap</span>
-          </button>
-          <div class="hype__meter" aria-hidden="true"><span id="hype-fill"></span></div>
-          <p class="hype__level" id="hype-level" aria-live="polite">Cold start</p>
-          <p class="hype__count"><span id="hype-count">0</span> taps of pure hype</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== FIND ============================== -->
-    <section class="section find" id="find" aria-labelledby="find-title">
-      <div class="find__photo reveal">
-        <img src="assets/img/crew-summit-games.webp" alt="A big group of Salty Hive athletes posing together on a turf field" loading="lazy" width="1600" height="1066" />
-      </div>
-      <div class="find__copy">
-        <p class="eyebrow reveal">Home of the Hive</p>
-        <h2 class="display reveal" id="find-title" data-scramble>Find the Hive</h2>
-        <address class="find__addr reveal">
-          <strong>Salty Hive CrossFit</strong>
-          4050 S Howick St<br />Salt Lake City, UT 84107
-        </address>
-        <ul class="find__list reveal">
-          <li><span>Text</span><a href="sms:+18014490478">(801) 449-0478</a></li>
-          <li><span>Email</span><a href="mailto:justin@saltyhivecrossfit.com">justin@saltyhivecrossfit.com</a></li>
-          <li><span>Visit</span><a href="https://www.saltyhivecrossfit.com/" target="_blank" rel="noopener">saltyhivecrossfit.com</a></li>
-        </ul>
-        <div class="row reveal">
-          <a class="btn btn--hive" href="https://www.google.com/maps/search/?api=1&amp;query=Salty+Hive+CrossFit+4050+S+Howick+St+Salt+Lake+City+UT+84107" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
-        </div>
       </div>
     </section>
   </main>
@@ -623,18 +295,16 @@
   <footer class="footer">
     <div class="footer__big" aria-hidden="true">Thr<b>HIVE</b></div>
     <div class="footer__row">
-      <img src="assets/img/shcf-logo-white.png" alt="Salty Hive CrossFit" width="576" height="234" loading="lazy" />
-      <p class="footer__tag">Where training &amp; community collide.</p>
-      <nav class="footer__social" aria-label="Social">
-        <a href="https://www.instagram.com/saltyhivecrossfit/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.youtube.com/@saltyhivecrossfit8588" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.saltyhivecrossfit.com/" target="_blank" rel="noopener">Website</a>
+      <p class="footer__brand">Thr<b>HIVE</b></p>
+      <nav class="footer__links" aria-label="Contact">
+        <a href="mailto:justin@saltyhivecrossfit.com">Email</a>
+        <a href="sms:+18014490478">Text</a>
+        <a href="https://youtube.com/shorts/nTL6EOq-iPo" target="_blank" rel="noopener">Watch the announcement</a>
       </nav>
     </div>
     <p class="footer__fine">
-      ThrHIVE is a 501(c)(3) nonprofit program, separate from and supported by Salty Hive CrossFit.
+      ThrHIVE is a 501(c)(3) nonprofit, separate from Salty Hive CrossFit, our founding partner gym.
       Photos courtesy of Salty Hive CrossFit &amp; <a href="https://www.instagram.com/bhofferphoto/" target="_blank" rel="noopener">@bhofferphoto</a>.
-      © <span id="year">2026</span> · 4050 S Howick St, Salt Lake City, UT · Once a part of the Hive, always a part of the Hive.
     </p>
   </footer>
 

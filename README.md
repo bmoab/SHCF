@@ -1,86 +1,51 @@
-# ThrHIVE · Salty Hive CrossFit
+# ThrHIVE
 
-The site for **ThrHIVE**, Salty Hive CrossFit's new 501(c)(3) nonprofit that brings
-free CrossFit training to drug and alcohol recovery programs in Salt Lake, and for
-its kickoff fundraiser:
+**CrossFit for the communities that need it most.**
 
-- **The Liftoff**: Friday, Dec 11, 2026
-- **The first annual Thrive Throwdown**: Saturday, Dec 12, 2026
+ThrHIVE is a 501(c)(3) nonprofit that partners local programs serving underserved
+communities with CrossFit gyms, and funds 12-week programs so they're free for
+participants. It's a separate organization from Salty Hive CrossFit, its founding
+partner gym.
 
-([Watch the announcement](https://youtube.com/shorts/nTL6EOq-iPo))
+First fundraiser: **The Liftoff** (Fri, Dec 11) and the **Thrive Throwdown**
+(Sat, Dec 12), hosted by Salty Hive CrossFit.
 
-It's a static site: plain HTML, CSS and JavaScript, with no build step and no
-dependencies. Open `index.html` in a browser, or host the folder anywhere.
+Live at https://shcf.vercel.app. Every push to the connected branch redeploys.
 
-## Updating the site
+## Editing the site
 
-Everything that will change lives in **`js/event.config.js`**.
+Everything that changes lives in **`js/event.config.js`**:
 
 | Field | What it does |
 | --- | --- |
-| `countdownTo`, `timeTBA`, `countdownLabel` | The hero countdown. It currently counts to the start of Dec 12. Set the real start time once it's announced. |
-| `calendar` | Events in the **Save Dec 11–12** calendar file. Dates alone give all-day events. Add `start`/`end` times once they're known. |
-| `intel` | The Throwdown game plan cards. A card with `value: null` shows as **Coming soon**. Give it a `value` (and an optional `detail`) to fill it in. |
-| `registerUrl` | Shows a **Register now** button above the early-list form. |
-| `giving.links` | Checkout pages for `monthly`, `yearly` and `once`. Until a link is set, that button collects a pledge (name + email) instead. |
-| `giving.amountParam` | If your checkout page reads the amount from its URL (e.g. `?amount=25`), put the parameter name here. |
-| `giving.swarm`, `giving.once` | The giving tiers and their names. Swarm amounts are per month; yearly is 12×. |
-| `giving.programCost` | What one 12-week program costs ($4,000). All the impact math on the page comes from this. |
+| `countdownTo`, `countdownLabel` | Hero countdown. Set the real start time when it's announced. |
+| `calendar` | Events in the "Save Dec 11–12" calendar file. |
+| `details` | Throwdown detail cards. `value: null` shows "Coming soon". |
+| `registerUrl` | Shows a Register button once registration is open. |
+| `giving.links` | Checkout pages for monthly, yearly and one-time gifts. Until set, the Give button collects a pledge. |
+| `giving.amountParam` | Name of the URL parameter your checkout uses for the amount, if any. |
+| `giving.swarm`, `giving.once` | Giving tiers and names. Swarm amounts are monthly; yearly is 12×. |
+| `giving.programCost` | Cost of one 12-week program ($4,000). The giving math uses this. |
 | `programs` | The honeycomb tracker. Update `raised` as money comes in. |
-| `backend` | Where sign-ups, pledges and partner inquiries are saved (see below). |
+| `backend` | Where form submissions are saved (see below). |
+| `email`, `phone` | Contact details used by the forms and footer. |
 
-## Giving: the Swarm, one-time gifts and the Apiary
+## Forms
 
-- **The Swarm** is the monthly or yearly giving community: 5 for Thrive ($5), Worker Bee ($25), Honey Maker ($50), Hive Keeper ($100).
-- **One-time gifts:** First Flight ($25), Comb Builder ($100), Fund a Week ($333), Fund a Month ($1,333).
-- **The Apiary** is for businesses and major donors: Program Sponsor ($4,000), Year-Round Sponsor ($16,000), Throwdown Partner.
-
-The site doesn't take payments itself. Point `giving.links` at checkout pages on a
-nonprofit giving platform that supports monthly, yearly and one-time gifts and
-emails tax receipts.
-
-## Where form submissions go
+Three forms: Throwdown sign-up, giving pledge, and partner inquiry.
 
 With `backend` left `null`, each form opens the visitor's email app with a
-pre-filled message to the gym, so nothing is lost.
+pre-filled message. To save submissions in a database instead, create a Supabase
+project, run `supabase/schema.sql` in its SQL editor, then put the project URL
+and publishable key into `backend`.
 
-To save submissions in a database instead:
-
-1. Create a Supabase project and run `supabase/schema.sql` in its SQL editor.
-   That creates `signups` and `pledges` tables the public can insert into but
-   never read.
-2. Put the project URL and its publishable key into `backend`.
-3. View or export submissions in the Supabase dashboard (Table Editor → Export).
-
-## Putting it online
-
-**Vercel:** live at https://shcf.vercel.app. Every push to the connected branch
-redeploys automatically. (Framework preset "Other", no build command.)
-
-**GitHub Pages:** go to **Settings → Pages**, choose **Deploy from a branch**,
-pick the branch, and select the root folder (`/`).
-
-If the site moves to a custom domain, update the `og:url` and `og:image` meta tags
-in `index.html` to match. Some apps only show the link preview image when the URL
-is absolute.
-
-## What's inside
+## Files
 
 ```
 index.html            page markup
-css/styles.css        all styles (brand colors are CSS variables at the top)
-js/event.config.js    ← dates, game plan, giving tiers, links: edit this one
-js/main.js            interactions: honeycomb hero, countdown, game plan cards,
-                      giving widget, forms, program tracker, calendar invite,
-                      share button, scroll gallery, quotes, hype meter
-supabase/schema.sql   optional database for sign-ups, pledges and partners
-assets/img/           Salty Hive photos (by @bhofferphoto) and the logo
-assets/og-image.jpg   the link-preview image for texts and social posts
-assets/favicon.svg
+css/styles.css        styles (colors are CSS variables at the top)
+js/event.config.js    ← edit this one
+js/main.js            interactions
+supabase/schema.sql   optional database for form submissions
+assets/               photos, link-preview image, favicon
 ```
-
-Brand: neon hive yellow `#e8f52a` on ink `#0a0a09`. Fonts are Anton,
-Epilogue and Source Code Pro (the same as saltyhivecrossfit.com), plus
-Kaushan Script for the "salty" script.
-
-Every effect respects the visitor's **reduce motion** setting.
